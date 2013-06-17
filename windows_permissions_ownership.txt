@@ -1,0 +1,15 @@
+Windows file permissions on off-line files (/windows/CSC)
+
+The aim is to access off-line files from standalone Linux system as Samba mounts.
+Need to access folder as local user (not on domain).
+First take ownership of file hierarchy under /windows/CSC/v.2.6/namespace/us-oakland. Use takeown.exe and specify recursive operation. Then use icacls to inherit permissions of all children from parent directory, ignoring errors (/C /F).
+
+System hangs when directory depth is large using the graphical user interface. Best using command line.
+
+Commands:
+
+takeown /F us-oakland /R /A /D Y
+
+icacls us-oakland /inheritance:e /T /C
+
+See script: off-line_perm_update.bat

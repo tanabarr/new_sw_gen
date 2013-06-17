@@ -1,0 +1,8 @@
+https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en-GB
+
+vimium
+usage notes:
+check it's loaded in extensions
+? For help
+F for find links
+..g to load in front window

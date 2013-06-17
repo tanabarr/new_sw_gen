@@ -1,0 +1,3 @@
+Control F8	-	change to Treeview
+control tab	-	change tab
+control t	-	new tab

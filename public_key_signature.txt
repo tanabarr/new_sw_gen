@@ -1,0 +1,84 @@
+Public keys cryptography
+
+-He generation 
+-signing algorithm 
+Message|| private key= signature
+-signature verification
+public_key_authentication (signature||message)= true/false
+
+Valid signature cannot be generated without private key
+
+Without certificates, it would be possible to create a new key pair and distribute the public key, claiming that it is the public key for almost anyone. You could send data encrypted with the private key and the public key would be used to decrypt the data, but there would be no assurance that the data was originated by anyone in particular. All the receiver would know is that a valid key pair was used.
+
+J Certificate Authority used as third-party when to entities share public keys through a mutually trusted mediator (CA). And then can encrypt data and sent to each other using the desired recipient of the message's public key.
+If the public keys known, signatures on sent documents can be verified by the receiver.
+
+Certificates show that the public key in the certificate belongs to the subject of the certificate.CA verifies the certificate applicant and then creates certificate with its private key. (Then used to verify the certificate later). CA's public keys distributed in software packages e.g. operating systems or manually added.
+
+Certificate types
+personal certificates
+server certificates- e.g. SSL communication, verify server to clients (ex.509 format defined by public key cryptography standards.PKCS)
+software publishers certificates-informs user with the publishers participating in infrastructure of trusted publishers/CAs
+
+Certificate authority certificates-
+	root CA-self signed (subject =signer)
+	intermediate (can issue certificates for other intermediates, main purpose is to issue and validate personal digital certificates)
+	verification chains include both the above.
+
+How a Certificate Is Issued
+
+Key Generation: The individual requesting certification (the applicant, not the CA) generates key pairs of public and private keys.
+Matching of Policy Information: The applicant packages the additional information necessary for the CA to issue the certificate (such as proof of identity, tax ID number, e-mail address, and so on). The precise definition of this information is up to the CA.
+Sending of Public Keys and Information: The applicant sends the public keys and information (often encrypted using the CA's public key) to the CA.
+Verification of Information: The CA applies whatever policy rules it requires in order to verify that the applicant should receive a certificate.
+Certificate Creation: The CA creates a digital document with the appropriate information (public keys, expiration date, and other data) and signs it using the CA's private key.
+Sending/Posting of Certificate: The CA may send the certificate to the applicant, or post it publicly as appropriate.
+The certificate is loaded onto an individual's computer.
+
+o verify a certificate, all that is necessary is the public key of the CA and a check against the CRL published by that CA. Certificates and CAs reduce the public-key distribution problem of verifying and trusting one (or more) public keys per individual. Instead, only the CA's public key must be trusted and verified, and then that can be relied on to allow verification of other certificates. Internet Explorer 5 can be set to check for the validity of certificates on the Advanced tab in the Internet Explorer Properties dialog box.
+
+CLARIFICATION: 
+public key certificate= digital certificate= identity certificate
+digital signature binds identity with public key
+therefore certificate =digital signature and used to verify that public key belongs to individual
+PKI= public key infrastructure
+PKCS= public key cryptography standards (the specification of a public key infrastructure)
+signatures on certificate are attestations to the truth of the identity information belonging to the public key
+C A provided within Windows server distributions as part of certificate services, in 2008 version CA installed as part of active directory certificate services.
+
+Basic website certificate verification
+transport layer Security (TLS) for HTTPs authentication between web browser and web server
+certification authority compares certificate applicant details with the information held for that domain by the domain name registrar to attest that the web server providing the service via a domain name is registered under the same e-mail address as the address used to register the domain. (E.g. avoids phishing)
+extended validation
+legal entity claim to run under domain name crosscheck with registered owner of the domain name
+
+(Response from Rob H)
+History and fundamentals:
+used to use shared key for encryption and decryption
+now use public key pair, public keys distributed and used for encrypting data sent to the owner of that public key (encrypted by remote sender using recipients public key). Data encrypted using public key can only be decrypted using the recipients (owner of the public key) private key.
+Public keys distributed within public key certificates.
+ >> Partly – better to say that public keys are authenticated as being genuine using certificates. Usually a public key is useless without the authentication information anyway, so distributing the public key is often a matter of distributing the certificate. The important point about a certificate is that it binds the public key to an identity and other attribute information about the owner of the public/private key pair.
+
+Digital signing:
+messages can be "signed"/encrypted (distinct from encrypting a message with the desired recipient's public key) with a sender's private key. The recipient can then authenticate that the message was created by the intended sender by decrypting the signed message with the sender's public key.
+ >> I would say verifying rather than decrypting. Usually signing a message does not obscure the content.
+When sending a message from “A” to B, “A” encrypt the message using  “B”‘s public key and then signs the encrypted message with its own private key ( “A”‘s private key).
+ >> This is one way of doing it. (There are lots of complicated protocols for doing this in various different ways.)
+When “B”received the message from  “A”, it authenticates that the message was created by “A” using the public key of “A” (unsealing the encrypted message, still encrypted with  “B”‘s public key). “B”then unencrypts the message using its own private key.
+Obtaining public keys is done through signed certificates. “A” sends its public keys to cA (encrypted? Signed?)
+ >> This is the tricky part. The problem is not so much protecting the keys – if someone does interfere with the keys, the only result is that the certificate is useless, and A can verify that the keys have not been interfered with when it gets the certificate back. The problem is more that the CA has to believe that the request really came from the person called “A” and not some other person pretending to be called “A”. How that is done is outside the scope of the cryptography – it depends on other security and governance processes.
+ And cA issue certificate signed with the CA private key (certificate contains public key of “A” alongside other &information (expiration, serial number, root authority/cA etc) and CA's signature).
+Distributed certificate is then used by “B”to obtain public key of “A” (which can be used to verify signed messages from “A” and encrypt messages destined to “A” from “B”).
+ >> Usually you have different keys for signing and encrypting (for cryptographic reasons), but that is a detail. A certificate will say what a public is can/should be used for.
+
+Trust:
+ “B”can trust that “A”‘s  certificate (Issued by CA) contains the valid public key of “A” because the certificate is signed by the root-cA (Trusted third party in transactions between “A” and “B”. 
+ >> This the same issue as the tricky bit mentioned above.
+B can verify that A’s cert was signed by the CA, provided it has the CA’s cert. But this verification only tells you that the CA was prepared to sign A’s cert. What you read into that depends on the extent to which you trust the CA. B may have the CA’s cert directly installed as a trust anchor (implicitly: you have decided to believe what the CA says about people); or, the CA’s cert may itself be signed by a higher layer authority which you have installed (implicitly: you have decided to believe what the higher layer authority says about CAs, and in particular if the higher layer authority says that someone is a bona fide CA who will be appropriately careful about signing certificates, you will take the higher layer authority’s word for that and therefore also trust that the CA certificate is telling you something meaningful about A.)
+ >> All of the previous stuff is generally summarised as saying ‘there is a trust anchor for the certificate chain’. But actually it’s important to be able to unpack that statement into the equivalent much larger statement (which itself is just a summary of the real situation) if you are trying to work out what is going on.
+Certificate is authenticated using the root CA's public key (to decrypt CA signature which acts as seal).CA's public key is widely distributed in (unsigned?) Certificates within pre-deployed software. This is the root of trust/trust anchor.
+ >> Trust anchors are usually self-signed, i.e. the signing key is the private key corresponding to the public key in the certificate. This self-signing is only the case for trust anchor certificates. A self-signed certificate in itself tells you nothing securely about a person – that’s why you have to have separate procedures to decide whether to accept it as a trust anchor. (You could ask what the point of the self-signing is – basically it prevents some sorts of corruption/modification, but doesn’t prevent forgery.)
+
+/*****************************************//*****************************************/
+CA signed something with its private signing key
+that CA's public (key) certificate is pre-deployed in software distributions and used to verify CA signed objects.

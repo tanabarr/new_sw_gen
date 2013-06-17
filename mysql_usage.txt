@@ -1,0 +1,95 @@
+MySQL basics
+
+Reference:
+http://zetcode.com/databases/mysqlpythontutorial/
+http://www.pantz.org/software/mysql/mysqlcommands.html
+
+mysql -u root -p test
+
+> select * from mysql.user;
+> create database <database name>;
+> show databases;
+> use <database name>;
+> SHOW TABLES;
+> DESCRIBE <table name>;
+> CREATE TABLE <new table name> LIKE <old table name>;
+> INSERT <new table name> * FROM <old table name>; 
+> ALTER [ONLINE | OFFLINE] [IGNORE] TABLE tbl_name
+    partition_options
+
+alter_specification:
+    table_options
+  | ADD [COLUMN] col_name column_definition
+        [FIRST | AFTER col_name ]
+  | ADD [COLUMN] (col_name)
+
+Install server on Ubuntu (MySQL-server)
+set password for root user
+mysql -h localhost -u root -p
+...
+
+> CREATE DATABASE testdb; 
+mysql> use testdb
+Database changed
+mysql> CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'test123';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> GRANT ALL ON testdb.* TO 'testuser'@'localhost';
+Query OK, 0 (0.00 sec)
+
+to select from table:
+> SELECT *<or column name> FROM <table name> WHERE <column name> = "string"
+
+Use fetchall () to refer the data via, names of the columns e.g. row["component_name"]
+
+To update an object:
+> UPDATE table SET ... (multiple changes listed with, separators) ... WHERE ...
+
+In order to delete an entry (python implementation):
+>  cursor.execute("DELETE FROM Writers WHERE Id = 5")  
+    
+  
+
+Remote access:
+
+Access through port 3306, ensure this is forwarded/accessible (could Ssh to tunnel
+need to grant access to tables for specific users
+e.g., from remote system x and user y with identification phrase z:
+> CREATE USER 'y'@'x' IDENTIFIED BY 'z'
+> GRANT ALL ON <database name>.* TO 'y'@'x';
+
+The user and account details contained in MySQL.user
+
+Need to specify interface on which to listen for SQL Server
+bind-address change from local host 
+/etc/mysql/my.cnf
+
+Use IP address of host in the connect () call and don't forget to grant access to require table.
+
+Create table requires table definition:
+specify column for ID (unique), names (varchar) and address (varchar).
+
+CREATE TABLE IF NOT EXISTS address_list (id INT(32) UNSIGNED AUTO_INCREMENT UNIQUE',
+names VARCHAR(512), address VARCHAR(512))
+
+
+Initial connection:
+root user loggin initially and then change password:
+mysql>SET PASSWORD FOR 'root'@'localhost' = PASSWORD('secret_password')
+
+Check there are not scripts that interfere with this process, it may be already set up in a custom manner.
+For example, Red Hat has a default user: mysql with no password but also no privileges.
+You are able to see a very minimal amount with mysql user. You would not be able to see tables or user information related to other users e.g. root.
+
+Can execute MySQL commands will from command line (and shell script) using mysql -u user -ppassword -e <command>
+
+
+look at lamp_setup for some troubleshooting steps with initial connection.
+
+
+"Help <SQL command>"is useful, can find commands from a reference 
+command is: 
+  BACKUP TABLE bkupreq TO '/home/tan/backup';
+  
+to restore:
+  RESTORE TABLE Requests FROM '/home/tan/backup';

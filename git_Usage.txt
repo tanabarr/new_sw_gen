@@ -1,0 +1,213 @@
+git_Usage
+Windows installer version
+contains inbuilt shell
+problems with download( intermittent, worked second time).
+
+Using shell, type 'git help'to get instructions.
+Initially register username and user e-mail with globals from website tutorial.
+http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+
+When you open git shell from the Windows git application inside your repository, git opens within the repository local directory.
+
+Can create empty directory and add files like that, for me to check development of files on my local system, make sense to add that directory to git:
+in  git shell… 
+cd <target directory>
+git init
+git add *.py (for example)
+git -m "initial commit"
+(if errors are made can use e.g. git rm -r core, and then git commit --amend, then there is only one commit)
+git log
+git remote add ns git://github.com/whIzz2000/natlink-scripts.git X
+(remote repository created on gitub server with shorthand ns instead of whole URL)
+git push origin master
+( the above command does not work, nor does the suggestion that has prompted when entered, permission rights may not be correct)
+
+SOLUTION:
+problem related to the fact that for public, free repositories on github, remote interaction using the "git" protocol is unsupported. (Options are SSH or HTTPS)
+do:
+git remote remove...( removing any old remotes via shorthand) 
+git remote add origin https://github.com/whIzz2000/natlink-scripts.git
+(remote repository created on gitub server with shorthand ns instead of whole URL)
+git push -u origin master
+
+Now that local directory has been turned into a local repository (init), files added and committed, the remote repository connected (remote add) after creating it on the github server (either using desktop application or on the web), we can push local repository to remote server.
+
+Can now drag local repository folder on the desktop application under local repositories, now we can track local repository on the desktop application gui.
+
+Don't forget to use .gitignore to ignore files we don't want to track.
+
+Change default shell (on web page) to use git shell instead of power shell
+
+Open shell using command "open git shell", navigate to target directory, run status command and add to stage any modifications, commit and then 'git remote -v'to check reference to remote repository exists before you 'git push -u origin master'.
+
+http://www.watkyn.com/2011/04/using-git-at-work-on-network-drive.html
+proposed method basically describes creating remote bare repository, cloning this in the desired local repository (which automatically creates a remote called "origin") and then pushing origin to master.
+
+This approach didn't work for some reason? Problem with server not updating info?
+"Did you forget to run 'update-server-info 'error caused by a typo in the remote address specification" 
+
+Can use approach above on different directories and target the same remote repository to add multiple files in different directories to the same repository.
+init,gitigore with a pessimistic/cautious approach (start by ignoring all files and then make exceptions, prefixed with !)
+
+Once you have the files you want listed as untracked (the rest are ignored) just do git add .
+
+"Src refspec master does not match any" error caused because you are trying to push repository without committing first.
+
+Problem encountered due to mismatch between remote and local caused by "reset" command.
+Remedy with deleting .git directory, running init, adding origin, pull origin master and then push -u origin master.
+
+
+/*****************************************//*****************************************/
+Adding more repositories and auto running script...
+Run from batch file:
+C:\MinGW\mysys\1.0\bin\sh ~/test.sh
+pause
+
+Script contents:
+"
+cd c:/NatLink/NatLink/MacroSystem/
+git remote -v
+git status
+git add _[!p]*.py
+git commit -m "auto update"
+git push -u origin master
+"
+
+Change permissions to make executable
+then works
+
+After troubleshooting, Windows batch file:
+"
+::C:\cygwin\bin\git-shell.exe -c ./git_auto_push.sh
+C:
+chdir C:\cygwin\bin
+::chdir C:\NatLink\NatLink\MacroSystem
+::..\..\..\cygwin\bin\git-shell.exe -c "status"
+bash --login C:\Users\tan.000\git_auto_push.sh
+::bash git_auto_push.sh
+pause
+"
+be careful of Windows file formatting for the script (auto_push)
+
+Authentication:
+http://stackoverflow.com/questions/10421430/bash-script-to-push-pull-from-private-git-repository
+Now need passwordless ssh
+generate key:
+ssh-keygen -t rsa
+copy ~/.ssh/id_rsa.pub to github under account settings
+
+Change the "remote" repository for name "origin" to use ssh rather than https
+note the change in syntax (not ssh:…, git@... Instead)
+
+When prompted, select "yes" to add the key to authorised keys
+authorisation should now occur without prompting for username and password
+
+Additional repository:
+git init
+create .gitignore file as above
+git remote add origin ... (SSH address) 
+git pull origin master
+git add *.txt
+git commit
+git push -u origin
+( fails because remote repository doesn't exist yet)
+create remote repository on github website 
+git push -u origin
+( fails because change on remote repository was after last pulled to local repository)
+git push --force origin master
+
+same with linux_software directory.
+Speech relate/DNS-customisations directory
+when performing "pull", removes any other files from working directory
+careful with using "reset".
+
+240413
+updated auto_push file in cygwin home/src/scripts
+initialised repository within c/win scripts
+
+Use git shell…
+
+300513
+problems with creating/initialising/missing objects using git from cygwin
+installed gitHub for Windows and then tortoisegit
+required to commit .gitignore to take this into account username, e-mail and signing key required (one key for cygwin and another for Windows)
+found this on website (github)
+
+when setting up on website,
+instructions are for a new repository:
+touch README.md
+git init
+git add README.md
+git commit…
+git remote add origin ...
+push -u origin master
+(just the last two commands for pushing existing repository)
+
+In the end, tortoise not used, recreated origin for folder which had trouble (on website). Removed origin in directory using cygwin bash git remote…, Added new origin and then pushed -u origin master.
+
+Similar problem with DNS customisations folder, file delete on directory without doing this through git. Attempt to commit, missing objects error. Then pull, then commit gives "cannot update head reference"… Error.
+
+"Trying to write ref… With non-existent object…
+Fatal: cannot update head ref "
+problem exists when messing around with files locally and not telling git.
+
+Attempted troubleshooting:
+
+  977  git rm DNS.reg
+  978  git add
+  979  git add .
+  980  git pull
+  981  git remote -v
+  982  touch _test_file.txt
+  983  git push origin
+  984  git remote rm origin
+  985  git remote add dnsm git@github.com:whIzz2000/dns-mods.git
+  989  git fetch dnsm
+  991  git push dnsm master
+  992  git add *.{[tT][xX][tT],reg,bat}
+  993  git status
+  995  git commit -m "test_v"
+
+NOTE:  when using a remote name other than "origin" required to specify branch when issuing a pull e.g.: 
+Created repository
+repository corrupted
+apply a fetch
+can then commit
+when attempting to push get message that "non-fast food forward updates rejected" required to merge changes with
+git pull remote master
+successful
+
+Issue seems to be when you have one repository which is within a subdirectory of another repository (even if ignored)
+
+Now issue with LINUX_software as part of the software repository…
+probably because it repository as well of being a directory within the software repository
+try to remove the metadata from the component directory before adding the directory to the software repository. Then we should avoid object mismatches associated with conflicting repositories.
+
+Standalone directories not within the software directory seem to work fine (matlink python scripts and winscripts)
+
+030613
+software origin pointing to LINUX software notes?
+Error with missing objects… 
+Rectify software directory origin to point to general software repository
+
+170613
+create a directory for generic software notes
+create new repositories for /software/Linux_software,/software/generic_software_notes and/software/speech related/DNS customisations
+
+Remove all older repositories
+should now have repositories for
+the above three
+natlink scripts
+win scripts
+
+Once repositories created on website
+
+
+git init
+git add README.md
+git commit…
+git remote add origin ...
+push -u origin master
+(just the last two commands for pushing existing repository)
+
+ensure that the right origin is found and that no origin is picked up from git directory higher folder hierarchy.

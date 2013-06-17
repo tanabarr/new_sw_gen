@@ -1,0 +1,25 @@
+Database indexing optimisation
+
+indexing the correct fields can help with the overheads database queries induce
+can use the "EXPLAIN" directive to assist in analysing query overhead
+database usage statistics should be analysed to determine usage pattern and subsequently choose the relevant indexing strategy (e.g. clustered or non-clustered)
+
+one tip is to avoid any numerical processing of the index when using a comparison in a "WHERE" clause.
+
+Detect "WHERE" MySQL query clauses within the code and prefix the relevant queries with the "EXPLAIN" directive in a MySQL CLI with a relevant populated database.
+
+Altering a table to add an index where there are multiple queries to use the same index is a good idea:
+
+
+ALTER TABLE employee ADD INDEX(surname,firstname);
+
+
+MySQL uses leftmost prefixing, which means that a multi-field index A,B,C will also be used to search not only for a,b,c combinations, but also A,B as well as just A.
+
+Analysing and optimising table usage: use "ANALYSE TABLE <table name>;" to obtain details of the distribution of keys in the database. If fragmentation due to insert and delete operations has occurred, the table can be fixed using "OPTIMISE TABLE <table name>;".
+
+The smaller the field used to index the better. If you can afford to use a concatenated portion of a table field as the index then do. For example if using surname, first name as the index and the fields are described as CHAR(255), the index can be chosen as "ALTER TABLE <table name> ADD INDEX(surname(20),firstname(20))". It is preferable to use "VARCHAR" over "CHAR" in the original table definitions (as well as selecting the fixed size fields carefully). Although this may result in fragmentation, the performance penalties can be overcome using the "OPTIMISE" directorate regularly.
+
+Optimising insert operations can be performed by using the efficient "LOAD DATA INFILE" directive. 
+
+Database query clause re-factoring:examine the output of queries and  select or create the appropriate index.is

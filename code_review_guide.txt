@@ -1,0 +1,13 @@
+Code review steps
+
+Development merge does not need doing unless seen as necessary
+
+Create diff between current and origin of branch
+
+Get on to the review board site, new request for a few, selected directory where difference made, browse to select the diff file, creates review request, fill out description and list of reviewersAnd then submit.
+
+If development merge already done and committed, just revert local version to origin and compare with most current version.
+
+Post-review is a good command line tool to do this.
+
+Fixed by making changes related to the comment or drop comment

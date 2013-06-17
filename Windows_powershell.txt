@@ -1,0 +1,5 @@
+Windows power shell usage
+
+Scripts saved as .ps1
+ >> Get-Commands is a useful command
+based on cmd-lets (single function command line tools)

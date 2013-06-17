@@ -1,0 +1,7 @@
+250313 troubleshooting
+
+Various services were stopped somehow on Windows 7 laptop
+set to automatic and start the following services:
+Windows Management instrumentation (task list command fails otherwise)
+WLAN auto config (for Wi-Fi)
+Windows search

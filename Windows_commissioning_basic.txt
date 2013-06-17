@@ -1,0 +1,61 @@
+Voice recognition:
+"dns_130110" dvd contains:
+administrator access required…
+DNS.REG (running this)
+NSRST.BAT (putting in program directory of naturally speaking and sending desktop a shortcut)
+install python and extensions required from natlink
+install natlink
+load profile (import from exported directory e.g. tom) 
+copy macro system folder to natlink directory
+install autohotkey and winky script (copy the script to my documents, add autohk to autostart registry)
+	C:\Program Files\AutoHotkey\AutoHotkey.exe
+/*****************************************//*****************************************/ 
+nsrst× 100113
+
+With reduced permissions, things get sticky.
+Required to run a batch file from the program directory for naturally speaking (with in program files x86)
+required also to use the forcekill /F /IM…
+Change to use absolute path is, should be using variables etc but can't remember the syntax
+
+/*****************************************//*****************************************/
+
+most required files in software_BTX/speech related
+installed Dragon NaturallySpeaking 11
+DNS.reg used to add automatic loading on boot
+nsrst.bat placed in DNS program directory with shortcut on desktop to enable restarting DNS (newest version worked with 64-bit Windows directory structure)
+pywin, Python 2.5 and wxpython (all to be compatible with Python 2.5) installed
+these are prerequisites for natlink3.9foxtrot
+cp contents of the macro system natlink folder from software_BTX to local folder
+
+Other Software:
+Cygwin
+Firefox
+tightVNC
+tortoiseSVN
+vnc
+winRar
+winscp
+putty
+wire shark
+visual studio 2010 express
+network connect vpn (visit rmrlvpn.Roke.co.uk)
+autohotkey (winkeys.ahk script auto started via local machine registry entry)
+
+Desktop configuration: (local user modifications to be done when connected to domain, not before as local administrator if being moved to another network)
+vertical right aligned start bar
+use small items on start bar, set to not hide quick start items in bottom right
+nsrst desktop shortcut and key shortcut in properties
+
+System configurations: 
+disable UAC
+turn network drive "tan" into off-line files
+Mount BTX server network locations for documents_btx and software_btx, shortcut to btx network location
+add win scripts from software_btx to desktop
+putty.Reg loaded from software_BTX/putty
+add desktop shortcuts for relevant network locations
+folder options enable viewing hidden/system files and unhide known extensions
+file extension type associations to be set
+
+Firefox configurations:
+sync key if using Firefox bookmarks synchronisation
+chrome file to disable orange menu button for voice recognition commands(putting in C/users/tan.000/AppData/roaming/Mozilla/Firefox/profiles/.../ chrome/userChrome.css

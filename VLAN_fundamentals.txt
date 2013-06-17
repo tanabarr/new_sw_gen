@@ -1,0 +1,36 @@
+VLAN fundamentals
+
+VLAN assigned by network adapter (usually not used configured)
+or by 802.1x authentication device
+
+Tags on ports indicate that the connected host can access those VLANs (if the host is connected directly, does the network adapter required to be in a specific VLAN as opposed going through a router?)??
+Assuming the packet from host is destined to a subnet hosted on a tagged VLAN, the packet will be directed to that subnet by the VLAN tag issued to the port the host is connected to(assuming there is a route configured within the switch e.g. VLAN IP address coinciding with radius server IP configuration).
+(Tagging with only one switch doesn't really make sense?)
+Tagging affects only ingress traffic, egress traffic is normally only transmitted on ports with the relevant untagged VLAN.??
+(Tagged means that when the packet enters this port destined for an IP in the subnet assigned in a VLAN that is tagged in the port, it is assigned that VLAN ID.??
+Untagged means that traffic from the switch destined to that VLAN will be broadcast across the VLAN's untagged ports.
+Traffic broadcast to VLAN will be sent out the relevant tagged ports. Traffic from a tagged VLAN port will only be processed by the VLAN aware device e.g.Q switch or VLAN aware endpoint device.
+
+Content addressable memory table used to map Mac address/port pairs in switch. Table subject to LRU ageing.
+
+Packets belong to VLANs, not devices.
+
+Most endpoint devices are not VLAN aware, they cannot process incoming tag packets or take tag a packet before sending it on to the network.
+
+VLANs can be assigned to port in a number of ways, e.g. dynamic, static, IP-based, Mac-based etc
+
+The packet entering a VLAN -aware Q-switch is first submitted to the relevant acceptable packet filter (APF). It must pass this test before the switch performs any detailed filtering. The APF is configured in one of two ways: admit all or admit all tagged. If configured for admit all, all incoming packets move immediately to ingress rules assessment. This is a necessary configuration for end-point device ports on an edge switch. They must initially accept all packets unless all devices connected to them are VLAN-aware.
+
+An admit all tagged configuration allows only VLAN-tagged packets to pass: a common configuration for a trunk port. All other packets are dropped. Further, an administrator can configure trunk ports to allow only packets from specific VLANs, thereby pruning unwanted traffic.
+
+If a packet makes it through the APF, the switch applies relevant ingress rules. It is here that a packet is mapped to one, and only one, VLAN. If the packet is already VLAN-tagged, no additional rules need apply. The packet moves to the relevant ingress filter. However, packets without tags receive a VLAN assignment based on one or more of the criteria listed above in Configuring VLANS.
+
+After being assigned a VLAN, the packet moves to the relevant ingress filter. It is here the switch applies a relevant access control list. Again, the list is checked from top down with the first match applied. The switch drops the packet if no match is available. Passing the ingress filter, the packet moves to the progress process.
+
+NOTE: given this information, it should be understood that if a port access port is untagged VLAN1 but when authenticated switches to VLAN2, radius server on IP address compatible with VLAN2 IP range. During authentication in EAP, EAP traffic is tagged with VLAN1 but ROUTED out of VLAN two untagged port towards server. This is accepted because server network interface is not tagged. Because one of the devices connected to the server switch port is not VLAN aware, port is not acting as a trunk and therefore tags will not work as in a trunk (VLAN aware devices connected to the port may not receive tagged packets broadcast because of a VLAN tag on the switch port.
+
+SOLUTION: untagg port access ports with different VLAN for authentication only, but radius server on separate IP range for authentication only (so DHCP does not issue address assignment), change authentication VLAN IP range to 192.168.210.0/24. And radius client IP to 192.168.210.2. Specify separate VLAN aware interfaces on server for authentication (192.168.210.1) and authorised access should allow traffic to become tagged and broadcast out of tagged ports with the relevant VLAN. 
+The switch port for server to act as trunk (only VLAN aware connected devices) using tags.
+Port mirroring in a trunk port. The VLAN that is untagged in the connected monitor port will supply untagged traffic (non-VLAN aware monitoring device will be able to see this). Change the untagged VLAN in the port to see the relevant traffic.
+Vlan information is sent within the ethernet packet inserted between source address and length/type. (VLAN protocol ID & tag control info)
+

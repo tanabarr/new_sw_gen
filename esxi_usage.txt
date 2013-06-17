@@ -1,0 +1,2 @@
+For VM is to accept USB drive, need to add USB controller to VM devices! (Performed in vSphere)
+can only do when powered on?

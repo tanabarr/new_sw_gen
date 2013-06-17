@@ -1,0 +1,5 @@
+Force context call-control\
+Force auto completion-control space
+python context help -shift f1 okay and you you you does was asking okay yes manner and I want to having accidents
+tabify region-alt f5
+untabify region-alt f6

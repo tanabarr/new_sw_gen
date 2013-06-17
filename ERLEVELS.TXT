@@ -1,0 +1,198 @@
+                   Allenware.com Batch Library
+        Informative ERRORLEVELs returned by Batch commands
+                   For use in Windows 95/98/ME
+
+===Version
+
+This is version 1.04
+
+Find the current version of this ERRORLEVELs file on our Website:
+
+          http://www.allenware.com/mcsw/errorlevels.zip
+
+
+===Disclaimer
+
+This package is provided free of charge, and is supplied only for
+educational and study purposes. Use it entirely at your own risk.
+No warranties are given. Never use a computer unless all valuable
+data are safely backed up and you know how to restore them again.
+
+
+===Using ERRORLEVELs in Batch files
+
+Full details of how to test, and act upon, ERRORLEVEL values that
+are returned by Batch commands are in our free, interactive Batch
+File Course. You can see a detailed Syllabus and Lesson Index at:
+
+            http://www.allenware.com/icsw/icswidx.htm
+
+
+===ERRORLEVELs in Windows 95/98/ME
+
+Most of the usual external command operations return ERRORLEVEL 0
+and this usually (but NOT invariably) indicates that no error was
+encountered. In the case of FIND, the ERRORLEVEL 0 indicates that
+the target string has been found (mnemonic=f0und), and ERRORLEVEL
+1 indicates the target string was missing (mnemomic=m1ssing). The
+list below details informative ERRORLEVELs returned by the common
+external commands. In Windows 95/98/ME, internal commands (namely
+those coded in COMMAND.COM) do not change the current ERRORLEVEL.
+
+Note: CommandName /? (use of the online help switch to return the
+normal Brief help) returns ERRORLEVEL 0, unless otherwise stated.
+
+Note: when a command encounters a device not ready condition (and
+possibly generates the Abort, Retry, Fail message), the reply you
+give (or supply automatically in a COMMAND.COM /f/c Fail-continue
+shell) sometimes affects what ERRORLEVEL the command will return.
+
+
+ATTRIB.EXE
+(a) Target file/folder not found                   = ERRORLEVEL 1
+(b) Invalid switch                                 = ERRORLEVEL 1
+(c) Sharing violation (target file in use)         = ERRORLEVEL 1
+(d) Invalid drive specification                    = ERRORLEVEL 1
+(e) Drive not ready (either Abort or Fail reply)   = ERRORLEVEL 1
+(f) Invalid/wrong number of parameters             = ERRORLEVEL 1
+
+CHOICE.COM
+(a) With reply list, and reply nn in list          = ERRORLEVEL nn
+    (This reply list position = return code is main use of CHOICE)
+(b) Invalid switch                                 = ERRORLEVEL 255
+(c) Invalid switch syntax                          = ERRORLEVEL 255
+(d) Timeout default not in reply list              = ERRORLEVEL 255
+(e) choice /?                                      = ERRORLEVEL 255
+
+CSCRIPT.EXE
+(a) Cannot find script file                        = ERRORLEVEL 1
+(b) No script engine for file extension            = ERRORLEVEL 1
+(c) No file extension in script file               = ERRORLEVEL 1
+(d) Drive not ready                                = ERRORLEVEL 1
+    (There is no Abort, Retry, Fail stall)
+
+DELTREE.EXE
+(a) Required parameter missing                     = ERRORLEVEL 1
+(b) Invalid switch                                 = ERRORLEVEL 1
+(c) deltree /?                                     = ERRORLEVEL 1
+(d) Not ready reading drive (Abort reply)          = ERRORLEVEL 18
+    (Note: Fail reply returns ERRORLEVEL 0)
+
+EXTRACT.EXE
+(a) Invalid switch                                 = ERRORLEVEL 1
+
+FC.EXE
+(a) Insufficient number of filespecs               = ERRORLEVEL 1
+(b) Too many filenames on command line             = ERRORLEVEL 1
+(c) Sharing Violation + Abort reply                = ERRORLEVEL 5
+    (Note: Fail reply returns ERRORLEVEL 0)
+(d) Drive not ready                                = ERRORLEVEL 18
+    (Note: Fail reply returns ERRORLEVEL 0)
+
+FIND.EXE
+(a) Target string found   (=f0und)                 = ERRORLEVEL 0
+(b) Target string missing (=m1ssing)               = ERRORLEVEL 1
+(c) find /?                                        = ERRORLEVEL 1
+(d) Parameter format not correct                   = ERRORLEVEL 2
+(e) Specified file to search not found             = ERRORLEVEL 2
+(f) Specified file in use + Fail reply             = ERRORLEVEL 2
+(g) Drive not ready + Fail reply                   = ERRORLEVEL 2
+(h) Specified file in use + Abort reply            = ERRORLEVEL 5
+(i) Drive not ready + Abort reply                  = ERRORLEVEL 5
+
+FORMAT.COM
+(a) Drive not ready                                = ERRORLEVEL 4
+    (There is no Abort, Retry, Fail stall)
+
+FTP.EXE
+(a) Brief help (use: ftp -h for Brief help)        = ERRORLEVEL 2
+(b) Error opening script file (file missing)       = ERRORLEVEL 2
+(c) Invalid switch                                 = ERRORLEVEL 2
+
+KEYB.COM
+(a) Invalid switch                                 = ERRORLEVEL 1
+(b) Invalid keyboard code specified                = ERRORLEVEL 1
+(c) keyb /?                                        = ERRORLEVEL 1
+
+MEM.EXE
+(a) Invalid switch                                 = ERRORLEVEL 1
+
+MODE.COM
+(a) Invalid parameter                              = ERRORLEVEL 1
+(b) Invalid switch                                 = ERRORLEVEL 1
+
+MORE.COM
+(a) Invalid switch (MORE doesn't accept switches)  = ERRORLEVEL 1
+(b) Drive not ready (Abort reply)                  = ERRORLELEL 5
+    (Note: Fail reply returns ERRORLEVEL 0)
+
+MOVE.EXE
+(a) Required parameter missing                     = ERRORLEVEL 1
+(b) Unable to create destination                   = ERRORLEVEL 1
+(c) Unable to open source                          = ERRORLEVEL 1
+    (you see this when trying to MOVE a folder from one drive
+     to another. You need to use XCOPY /S followed by DELTREE,
+     since MOVE won't handle folder moves across drives)
+(d) Sharing violation + Fail reply                 = ERRORLEVEL 1
+    (Note: file is nevertheless COPIED, not moved, in this case)
+(e) Sharing violation + Abort reply                = ERRORLEVEL 5
+    (Note: file is nevertheless COPIED, not moved, in this case)
+(f) Drive not ready (Abort reply)                  = ERRORLEVEL 18
+    (Note: Fail reply - unusually - returns ERRORLEVEL 1)
+
+PING.EXE
+(a) Unknown host                                   = ERRORLEVEL 1
+    (usually=name not found on DomainNameServer)
+(b) Brief help (with no parameter)                 = ERRORLEVEL 1
+Note: for PING Brief help with /? switch, ERRORLEVEL is 0
+(c) Invalid switch                                 = ERRORLEVEL 1
+    (and displays the Brief help as well)
+(d) Interrupted with [Ctrl-C]                      = ERRORLEVEL 255
+
+SORT.EXE
+(a) Invalid switch                                 = ERRORLEVEL 1
+(b) Drive not ready (Abort reply)                  = ERRORLEVEL 15
+    (Note: Fail reply returns ERRORLEVEL 0)
+
+START.EXE
+(a) start /? (real mode)                           = ERRORLEVEL 1
+(b) start /? (GUI)                                 = ERRORLEVEL 255
+(c) Can't find file specified for START            = ERRORLEVEL 255
+(d) No file association for specified file         = ERRORLEVEL 255
+(e) Drive not ready                                = ERRORLEVEL 255
+    (There is no Abort, Retry, Fail stall)
+
+SUBST.EXE
+(a) Invalid parameter                              = ERRORLEVEL 1
+(b) Invalid switch                                 = ERRORLEVEL 1
+(c) Path not found                                 = ERRORLEVEL 1
+(d) Drive not ready (Abort reply)                  = ERRORLEVEL 21
+    (Note: Fail reply - unusually - returns ERRORLEVEL 1)
+
+TRACERT.EXE
+(a) Unable to resolve target system name           = ERRORLEVEL 1
+    (usually=name not found on DomainNameServer)
+(b) Invalid switch                                 = ERRORLEVEL 1
+(c) Brief help (no parameter)                      = ERRORLEVEL 1
+(d) Interrupted with [Ctrl-C]                      = ERRORLEVEL 255
+Note: for TRACERT Brief help, type command without parameters
+
+XCOPY.EXE
+(a) File not found                                 = ERRORLEVEL 1
+(b) Invalid date in /d switch                      = ERRORLEVEL 4
+(c) Invalid number of parameters                   = ERRORLEVEL 4
+(d) Invalid parameter                              = ERRORLEVEL 4
+(e) Device not ready                               = ERRORLEVEL 4
+(f) Unable to create directory                     = ERRORLEVEL 4
+(g) System can't find file                         = ERRORLEVEL 5
+    (this occurs when device such as NUL is used as Source file)
+
+Full details of how to test, and act upon, ERRORLEVEL values that
+are returned by Batch commands are in our free, interactive Batch
+File Course. You can see a detailed Syllabus and Lesson Index at:
+
+            http://www.allenware.com/icsw/icswidx.htm
+
+                     William and Linda Allen
+     Creative Technical Writing http://www.allenware.com/
+ (c) Copyright Allen & Company 2005 - all rights reserved (c)
