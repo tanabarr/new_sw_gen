@@ -202,12 +202,21 @@ win scripts
 
 Once repositories created on website
 
+git@github.com:whIzz2000/new_sw_gen.git
+git@github.com:whIzz2000/new_lin_sw.git
+git@github.com:whIzz2000/new_dns_cust.git
 
 git init
+git add .gitignore
 git add README.md
-git commit…
+git add .
+git commit -m …
 git remote add origin ...
 push -u origin master
 (just the last two commands for pushing existing repository)
 
 ensure that the right origin is found and that no origin is picked up from git directory higher folder hierarchy.
+
+Problems with Linux_software repository involved corrupted file permissions due to Windows/Linux sharing and editing. Removed contentious files, copied text files only to Linux_software_notes and tried again.works fine.
+
+Update git_ auto script to reflect new location (Linux_software_notes)
