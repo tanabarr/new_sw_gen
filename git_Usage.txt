@@ -220,3 +220,13 @@ ensure that the right origin is found and that no origin is picked up from git d
 Problems with Linux_software repository involved corrupted file permissions due to Windows/Linux sharing and editing. Removed contentious files, copied text files only to Linux_software_notes and tried again.works fine.
 
 Update git_ auto script to reflect new location (Linux_software_notes)
+
+/*****************************************//*****************************************/
+190613
+
+Problem with corrupted head,
+resolve differences shown in git status (git add/rm..., git check out -- <file>)
+commit
+push origin master
+remove the push "-u" flag from auto script
+still get incompatible object error after adding another file
