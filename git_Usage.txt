@@ -214,6 +214,7 @@ git commit -m …
 git remote add origin ...
 push -u origin master
 (just the last two commands for pushing existing repository)
+push -u needed just the first time
 
 ensure that the right origin is found and that no origin is picked up from git directory higher folder hierarchy.
 
@@ -230,3 +231,40 @@ commit
 push origin master
 remove the push "-u" flag from auto script
 still get incompatible object error after adding another file
+/*****************************************//*****************************************/
+230613
+
+Useful commands:
+git branch -va (list branches verbose mode all)
+git add -u .(removes ifthere are deleted files in the index)
+git config --list
+git log (-p)
+
+If my branches out of sync, fetch --all
+will pull the remote changes to working directory
+then merge
+then push 
+
+Origin refers to your branch
+need to have a tracking branch
+git checkout changes current branch
+git checkout -t -b master origin/master
+(forces a tracking branch to be createdto follow aremote master)
+resolves path specification error"did not match any files known to git"
+
+Troubleshooting earlier problems
+making sure that we pull changes before trying to push an out of date repository.?
+git pull origin master
+this does the fetch and merge?
+Then the push will work because it's not fast forwarding
+
+Possible earlier problems to do with tortoisegit/multiple git management systems
+
+New process for script:
+git add -u .
+git add .
+git branch -va
+git commit -m "auto update"
+git push origin master
+
+Loop through directories, perform above in sensible manner in auto script
