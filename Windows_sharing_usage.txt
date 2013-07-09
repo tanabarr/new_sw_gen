@@ -1,0 +1,4 @@
+Linux backup script that accesses Windows shares was not working due to sharing service in Windows not working.
+enabled to start automatically
+found the service was failing because the snappin shrpubw was not working and "sharing" tab on Windows Explorer was not present in folder properties.
+Look for dependencies, examine event viewer Windows system log
