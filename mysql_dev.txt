@@ -1,0 +1,15 @@
+MySQL development notes
+
+MySQL C API
+
+When using prepared statements, length of objects can be retrieved before fetching the actual object by binding the columns (all columns need to be bound before calling fetch). When binding in this initial phase, bind structure members buffer and buffer length are set to 0 while length is assigned a pointer to an unsigned long integer which is populated with the size, in bytes, of the object when fetch is called.
+
+Once this "real length" as been retrieved, columns can be fetched sequentially from this row (rows are iterated through using the "fetch" API call). Bind each column at a time before calling "fetch_column" with the relevant column number.
+
+Note that for some reason on the fetch_column call the length bind structure member does not seem to be populated??
+
+is_null indicates whether the output column value is NULL.
+
+is_unsigned should be used to explicitly state the signed-ness, in conjunction with "unsigned char" datatype for example. 
+
+Don't forget to rebind result buffers once changed. (before calling fetch column each time)
