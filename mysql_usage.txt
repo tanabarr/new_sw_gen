@@ -103,5 +103,11 @@ to restore:
   RESTORE TABLE Requests FROM '/home/tan/backup';
 
 /*****************************************//*****************************************/
+CYGWIN
+/*-------------------------------------------- */
+
 mysql-python is the new name for MySQLdb
 installed on cygwin through easy_install
+When trying to run the server daemon, errors appear relating to trying to access/create the plug-in directory.suggested to run the upgrade script (MySQL_upgrade).
+Instead run the MySQL_install_db
+execute mysqld
