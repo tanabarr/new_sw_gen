@@ -12,7 +12,7 @@ is_null indicates whether the output column value is NULL.
 
 is_unsigned should be used to explicitly state the signed-ness, in conjunction with "unsigned char" datatype for example. 
 
-Don't forget to rebind result buffers once changed. (before calling fetch column each time)
+Don't forget to rebind result buffers once changed. (before calling fetch column each time)??
 
 Don't forget to free_result and stmt_free_result for meta data  and statement respectively. This should probably be performed when closing down (prepare will reset statement object if necessary)
 
@@ -22,3 +22,12 @@ test type,
 process length and meta data,
 bind result buffers and fetch column, 
 retrieved descriptor /string,
+/*****************************************//*****************************************/
+
+Using meta data:
+prepare
+fetch meta data result
+execute statement
+bind all columns and all values (not necessarily to buffers, zero length buffer) (bind result)
+fetch
+f col repeat afterbind
