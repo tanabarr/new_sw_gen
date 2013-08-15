@@ -1,0 +1,11 @@
+sqlite3
+http://www.linuxjournal.com/content/accessing-sqlite-c
+
+open
+prepare_v2
+exec
+
+Difference with other database libraries:
+
+Prepare function as different versions to avoid backwards compatibility issues. v2 is current
+

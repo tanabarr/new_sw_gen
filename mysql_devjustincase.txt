@@ -29,7 +29,7 @@ prepare
 execute statement
 get field account from statement
 if more than zero fields 
-	fetch meta data result
+	fetch meta data 
 	fetch field objects
 	allocate bind object for each column (make global) 
 	initialised bind object to 0 
@@ -45,38 +45,11 @@ any parts of the buffer that return information should be assigned pointers to t
 
 if we want to fetch the whole row, assign each column a field type, allocate the correct buffer type and any flags, .\point the buffer at the allocated memory, give the memory size as buffer length (this doesn't give us the exact length of buffer first)
 
+
+
 getting field type:
 this is either done for all columns at once before a single fetch or per column fetch (probably best done for all columns at once for a single fetch so the values can be bound)
 Case statements for setting up destination data buffers and sizes either executed every row or every column fetch.
 p3341
 
 NOTE: passing put through specialised type: wchar_t, needs to be pointer type?
-object-oriented string types require access function to retrieve characters
-
-MySQL uses innodb as a storage engine which controls the allocation of memory
-and storage of data, different storage engines are available for different use
-cases e.g. for specific CSV databases. innodb has a custom memory allocator
-within it mem subsystem. By default it uses the system memory allocator
-instead. Loading a memory allocator requires supplying the library within the
-relevant library compiler flags (ld_library_path, ld_preload if no access to
-the binary source). this could be done within dlopen in source to override the
-,system memory allocators. this concerns the server, compiling against the
-client library, there is no defined method of using the custom memory
-allocator.
-
-LESSONS LEARNT: utf8, selectable within "set character set" parameter/option
-looking for binary requires checking the binary meta data setting specifically,
-then set buffer appropriately
-re-\ factoring, avoid long, messy functions
-stringmanagement, Ms custom constant strings to a specific file, may need to
-look elsewhere (in terms of locations) for library
-excessive API calls, reduced set more likely to work across different libraries
- what about size buffer used to receive?
-
-DATA GENERATOR:  various open source offerings,dgp is more polished commercial.
-Test client application by comparing request through client with direct SQL
-query. Spawner seems to be good,doesn't necessarily connect directly 2
-different databases? data generator reports to
-but_may_require_connection_first.
-
-PEXPECT: best ways to wget version 2.3. Examples show usage.
