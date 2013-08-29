@@ -1,0 +1,21 @@
+Following Oracle technetwork tutorial on demonstration of Oraclevm3 server and manager using virtual box.
+
+Involves setting up two host only network to demonstrate on a single physical host.
+In this case it is subnet 192.168.56.0/24 & 192.168.209.0/24
+
+Oracleserver1:192.168.56.101
+Oracleserver2:192.168.56.102
+
+Manager vm root password:testOraclemanager1:192.168.56.100
+
+
+domain names same as machine names appended by example.com
+
+Apart from manager which is manager.example.com
+
+manager has GUI
+
+Manager has attached virtual disks:
+pool1-poolfs 12gb
+pool1-repository1 32gb
+http-template-library 32gb
