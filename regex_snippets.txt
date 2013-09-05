@@ -1,2 +1,5 @@
 :%s/print [^(]\(.*\)/print(\1)/gc
  from __future__ import print_function¬
+
+:s/, \(\w\+\)/, '\1'/gc
+surround strings delimited by, with '
