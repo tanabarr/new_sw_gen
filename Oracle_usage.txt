@@ -66,3 +66,8 @@ needs to be at least twelve gig
 
 Best to release and then remove virtual hard drive using virtual media manager (access via file menu in the virtual box manager)
 then can remove the file in directory and then recreate in the virtual box manager.
+
+/*****************************************//*****************************************/
+Oracle database administrator's guide
+connecting to database through SQL plus 1-6(chapter
+remote and local connections
