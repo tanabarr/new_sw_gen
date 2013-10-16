@@ -63,10 +63,10 @@ Don't forget to set password for remote users as well as local.
 
 The user and account details contained in MySQL.user
 
-Need to specify interface on which to listen for SQL Server
-bind-address change from local host 
-/etc/mysql/my.cnf
-(bind_address 192.168...)
+***Need to specify interface on which to listen for SQL Server
+***bind-address change from local host 
+***/etc/mysql/my.cnf
+***(bind_address 192.168...)
 
 If on a local network, hostname may be required to have.local appended e.g. Bob.local
 
