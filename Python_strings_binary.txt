@@ -1,0 +1,14 @@
+python strings and bites
+
+String literals defined in source are interpreted by interpreter using utf-8
+
+Python strings store Unicode codepoints.
+
+Codepoints are not the same thing as bytes. Bytes are a computer representation of numbers (most commonly between 0 and 255), and those numbers can be translated to codepoints through the process of decoding, and in the other direction with encoding. Python 3 strings contain codepoints, one for each character in the text.
+
+Python source code can define string literals using a series of bytes, that the interpreter decodes to unicode using the UTF-8 codec by default, but you can set other codecs at the top of the file. On disk, the letter a in UTF-8 encoding is indeed just one byte, that is the nature of the UTF-8 standard.
+
+If you read a file in text mode, Python applies the decoding process for you automatically, but when you open it in binary mode, no decoding is done and you get a bytes object instead. The contents of that object should reflect the contents of the file exactly. Note that it is not of type str, it is not unicode, it is not even a Python string. To turn bytes into a string you'd need to explicitly decode with the .decode() method.
+
+A bytearray is trivially created from a bytes value, just call bytesarray() on it.
+
