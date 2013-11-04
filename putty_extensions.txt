@@ -1,0 +1,4 @@
+Would be useful to be to combine winscp functionality
+puttycm/supereputty may be anyway
+mremote?
+saving sessions on file and not in registry may be a+
