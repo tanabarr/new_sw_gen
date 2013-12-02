@@ -1,0 +1,5 @@
+Main control tool, simple and easy
+avoid interferences between control tools(Unimacro,natlink, vocola)
+remove unnecessary to avoid this
+remove command selecting editor, let file association managed this
+"edit" commands now open in gvim

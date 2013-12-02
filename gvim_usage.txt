@@ -1,0 +1,11 @@
+ setting up gvim as default editor, replacing notepad and WordPad
+ensure start-up settings runs your "_vimrc.vim" (including a source command)
+removed behaves as Microsoft Windows command in start-up settings
+Set up so that each file opened is opened in the same instance, can do this either by setting a custom command string for file association from the command prompt, or for a more portable solution in my situation, cvim.bat in win scripts is selected in file association which runs the given file name with extra parameters using gvim.
+
+
+Leave text files as opening in notepad, useful to have the multiple windows lying around and not automatically closed
+also select and say and tracking corrections works better with Dragon in notepad or DragonPad or dictationbox
+
+Don't change batch file file associations ,registry key removing needed for reset
+

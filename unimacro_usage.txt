@@ -1,0 +1,10 @@
+interesting commands:
+show grammar lines
+show active grammars
+show recognition history
+
+Experiment with subfolders to open folders within a navigation directory
+ep121 and voice recognition (video for writing how to make a latex document)
+vocola information and usage 
+show numbers plus application?
+
