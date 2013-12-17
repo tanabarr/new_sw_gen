@@ -1,0 +1,67 @@
+0django usage
+
+django installed on cygwin using virtual environment:
+virtualenv+ wrapper
+changed my project directory, ensure WORKON environmental variables are set up correctly
+do "workon <project directory enabled through virtualenv>"
+installation tutorial:
+file://us-oakland/home11/tan/literature/py_djan_cyg.htm
+
+shell prompt should change and then we reside in project environment
+
+setup project in django:
+tutorial:
+file://us-oakland/home11/tan/literature/Writing%20your%20first%20Django%20app,%20part%201%20%20%20Django%20documentation%20%20%20Django.htm
+
+in the virtual environment, django, easy install, python and pip are installed (not using the host's executables)
+
+inside virtual environment project folder, run
+ >> django-admin.py startproject <project name>
+change into this directory and then to test, run
+ >> python manage.py runserver
+open browser and navigate to the address listed in the output from the previous command (e.g. 127.0.0.1:8000)
+should say congratulations message...
+
+the virtualenv packages useful to isolate environment so that different versions of binaries can be used for the web development than on the host system.
+
+Inside django project, edit settings file to reflect the database location you want to use
+(for example if I'm running the project in a virtual environment within cygwin and my Windows laptop, may not want to use local database, use 192.168.1.199,tan, old work password instead)
+
+/*****************************************//*****************************************/
+following tutorial:
+
+
+>>> Poll.objects.filter(question__startswith='What')
+[<Poll: What's up?>]
+
+This doesn't work.. Question_starts… Is unrecognised
+
+/*****************************************//*****************************************/
+setting up a new project (reference: django_ setup_hist.TXT)
+
+when copying template directory, if using a virtual environment, probably find somewhere under the lib/python2.x/django/contrib… Rest of the information is in the tutorial
+after setting up admin and user interfaces, complete four pages of tutorial, now transition to new project (new virtualenv environment: follow the link:
+file:///U:/literature/py_djan_cyg.htm
+ >> mkvirtualenv --no-site-packages myproject
+to set up the environment within the virtualenv base directory (projects)
+ >> workon myproject
+ >> cd myproject
+ >> easy_install pip
+ >> pip install django
+(took two tries)
+follow set up above ("inside virtual environment project folder, run…")
+With different project name and relevant directories (XXproject, XXsite)
+
+Can specify python version used with new environment using virtualenv2.x...
+virtualenv ... -p 2.x
+should be notified about upgrade of  python executables and initialisation script
+
+will write scripts etc using specified python version
+executables need to be updated to use new python version
+when upgrading to py2.7, required to use easy_install-2.7 in the base user environment. Use this to install pip (again in the base environment). This does not automatically update the executable versions in bin. Best to just remove these first in the virtual environment before installing using the updated tools.
+Also install Django through pip-2. then web server can be up and running (in tadminserver/mysite).
+Directory structure is virtual(env) directory (projects)/virtual environment (tadminproject)/website directory (mysite)
+
+administrator site login
+tan
+standard password

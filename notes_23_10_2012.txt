@@ -1,0 +1,21 @@
+ssbA2Notes_Wednesday_24th of October 2012
+
+look@log.txt within the system test directory for more details
+print out from the system scripts should also go there
+
+in pexpect call to spawn, parameters can be adjusted.
+Good idea to look at the log
+Max read and search window size parameters can be tuned by volume of command output
+logfile can be turned on to enable logging
+
+Notes_Thursday 25th of Oxford
+
+correct installation of .egg is required for pexpect. The required python files need to be inside the egg directory for this to work correctly, then source modified to overcome the not blocking error.
+
+Problem with running the daemon (periodic errors an exception) overcome by restart (probably just rogue python processes, could use script in tools/utilities), restarting SQL after reboot and resetting database with script
+
+enable daemon to run under root user, requires fixing environmental variables/bash_ profile/path variable specifically. Compare graemes sent via e-mail.
+
+Followed red herring about python version (2.4 installed in /usr/bin but not first in precedence as a result of path variable)
+
+Bugs to report or not?: Rpm will not install if there is another rpm of another name in the same directory. Remove ambiguity in wiki about which pexpect file to edit.

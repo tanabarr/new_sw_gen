@@ -1,0 +1,20 @@
+Vocola/unimacro queries
+I've got a couple of questions hopefully someone can answer below.
+
+Focusing applications
+is it true that when an application is in memory the grammars for it are active, not just when the application window is in focus.
+Anyway of modifying this behaviour so that grammars for a particular application are any active when one of the application windows is"top" or in focus?
+
+Unimacro folders
+using the folders grammar, when I specify a shared drive in a folder path, which I use as an off-line folder, and I'm not connected to the network this comes up as an obsolete folder/drive. The files are still available from"my computer" as they have been stored off-line.
+Any possible workarounds for this?
+I have previously asked about the"^X" character appearing when using the brackets grammar in unix, possible workarounds have been suggested and will be tested soon. So thanks for that.
+
+
+I've also been working on my vim vocola set up and have produced an .vch header file available at https://github.com/whIzz2000/vocola/blob/master/vim.vch
+I'm using this with mintty/gvim/putty executables.
+none of it is my original work, just borrowed from vocola samples/vim tips website and a "gist" vocola script someone posted on (public) github.
+
+Hope it helps someone.
+
+

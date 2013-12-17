@@ -268,3 +268,11 @@ git commit -m "auto update"
 git push origin master
 
 Loop through directories, perform above in sensible manner in auto script
+
+/*****************************************//*****************************************/
+101213
+
+Total process for adding new repositories 
+add empty repository on website
+through local cgwin terminal initialise repository in target folder, added the remote repository, add and commit required files, push master to origin
+ >> 

@@ -3,3 +3,17 @@ avoid interferences between control tools(Unimacro,natlink, vocola)
 remove unnecessary to avoid this
 remove command selecting editor, let file association managed this
 "edit" commands now open in gvim
+
+031213: most duplication been removed
+
+vim commands all moved to vocola
+natlink vim /screen macro functionality disabled
+vim commands tidied and enhanced
+in general vocola commands, default set of text editing commands are defined and initialised, application-specific command files override these
+to.o: finished these overriding editing commands for vim 
+	convert text macros from mycmds into vocola
+
+Applications specific commands for cygwin & putty use header file to put in vim commands.
+
+101213:
+Problem with using some vim commands on Linux bashed Shell, mainly related to not returning to insert mode.

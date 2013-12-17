@@ -1,0 +1,9 @@
+Iterators= processes return value each time iter is called (or the object accessed), doesn't create all the values at once, as knowledge of previous values/functions previous return value. Need to define __iter__function, can call next () method in the function. 	S
+
+Generators= created when you define a function with a yield keyword. When yields is executed, function returns but remembers exactly what was last executed within the function. Multiple yield statements act as return values for the next present () method
+
+For element in generator 
+	function (element)
+
+This will continue until stop condition in generator is met
+(each element is generated when generator function called, list does not exist beforehand. Useful for performance and memory constraints)

@@ -1,0 +1,4 @@
+fcntrl
+required for getwinsize/set.. functions in pexpect.py
+the related to the interact function, these functions are not always required when using the expected module
+(shop

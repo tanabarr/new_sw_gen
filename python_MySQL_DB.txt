@@ -1,0 +1,24 @@
+import MySQLdb as mdb
+
+For this to work need to install python-mysqldb (for client application)
+and mysql-server (for server database)
+
+Import MySQLdb.cursors
+
+Required to use dictionary type cursor
+
+"shelve" module used for serialisation and database transfers
+
+Example command:
+
+  cursor.execute("DELETE FROM Writers WHERE Id = 5")  
+    cursor.execute("DELETE FROM Writers WHERE Id = 4") 
+    cursor.execute("DELETE FROM Writer WHERE Id = 3") 
+    
+    conn.commit()
+
+except mdb.Error, e:
+  
+    conn.rollback()
+    print "Error %d: %s" % (e.args[0],e.args[1])
+  

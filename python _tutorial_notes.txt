@@ -1,0 +1,70 @@
+python tutorial notes 
+
+Module information
+
+import sys
+dir(sys)	# object information/function symbols
+help(sys)
+can use help with module functions e.g.
+help(sys.exit) 
+
+
+For unknown modules, get global name module is not defined.
+
+
+def <function_name>(<arguments>): 
+...
+<standard indentation is two spaces>
+
+
+Every statement with subsequent code ends in a:
+() not usually included unless to specify functions and parameters.
+Lines are not checked until running runtime, test coverage therefore not great. 
+
+Can use format strings, printf syntax.
+"Blah blah %s blah blah" % ('example', 42)
+non-Unicode as default. 
+
+Negative index number scheme, last character in string is referred to as -1 and first character as -(len (string)
+
+For example, for files with three letter extension 
+
+And one.txt
+and to.jpg
+and another long 13.exe
+
+Assigned to strings e.g. string1= "and one.txt"
+then can do stringX[:-4] irrespective of length of string to strip the end extension off (of course could do string.strip (.) Etc instead).
+
+Sha-bang suceeded with -tt to avoid processing files a mixture of spaces and tabs. 
+
+
+Tuple with parentheses
+list with square brackets
+dictionary with curly braces
+elements any chance selected with square brackets
+
+
+note: useful to use "rU" to open file and ignore UNIX/DOS line ending differences.
+Training, after print…… Avoid printing the end.
+Character for the line ending when reading files line by line.
+
+Need to contain variable type in variable name. 
+
+For line in file (reads line the line into memory)
+lines= file. readlines () 	(reads file into array of lines)
+.read ()	(reads file into single string)
+
+Regular expressions imported from "re"
+match =r.search (atom, text)
+then test for match and interrogate match.group.
+re. findall is the same as /g (global) option in sed, which finds all occurrences of ma are you you you you you you are routed seven click tch
+
+Re has third arguments (re.search (...,…, re.l) do dir (re) to see options e.g. ignore case that the etc
+
+
+variable scope:
+
+@Geo It is because you can access (not assign) any value of an outer scope. That's how scoping in Python works, and if it weren't that way, you'd have to global every single variable and function you'd want to use inside your function. – phihag53 Mar 3 '11 at 17:2454
+	
+@Geo: You can reference variables in a larger scope than your current one. You just can't assign to them. You need to use the global keyword in that case. – alpha12355 Mar 3 '11 at 17:2556

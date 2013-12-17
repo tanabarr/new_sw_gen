@@ -1,0 +1,15 @@
+Things to query
+
+Sython
+Django -Web resources environment for development
+Mysqldb-interface module for mysql database interaction from python 
+md5 generation and comparison in python 
+Cupid (Qpid) messaging library
+generator functions?
+Unicode how to
+"with" and "as" keywords
+omnicomplete, correct functionality
+	(Vim python-mode), good tutorial on YouTube about this
+rope 
+<leader>= map key, can be changed in.vimrc
+github usage (fugitive vim plug-in)

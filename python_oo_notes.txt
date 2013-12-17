@@ -1,0 +1,27 @@
+Remember that if you want to function to belong to a class, as to take an object of that class as a parameter.… (self)…
+
+Function call from within a dictionary, we don't want to call the function when instantiating the dictionary. Could use the apply method with a tuple for the dictionary value (first element of tuple is function name, second is *args, third is **kwargs) but this has been deprecated and will be removed in version 3, can we use extended call syntax in the same way?
+The other option is to use a string and apply getattr with this string name to return a function pointer when we want to call the function. The second option doesn't allow as much flexibility.
+
+Extended call syntax example (basically just the automatic expansion of the arguments and keyword arguments):
+"
+
+>>> class A (object):
+... 	def foobar(self, a, b):
+... 		print a, b
+... 		
+>>> a = A()
+>>> a.foobar("bar", "baz")
+bar baz
+>>> f = getattr(a, "foobar")
+>>> l = ["something", "else")
+Traceback (  File "<interactive input>", line 1
+    l = ["something", "else")
+                            ^
+SyntaxError: invalid syntax
+>>> l = ["fdsaW", "dsafds"]
+>>> f(*l)
+fdsaW dsafds
+>>> f("go","away chris")
+go away chris
+>>> 1"

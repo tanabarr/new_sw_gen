@@ -1,0 +1,13 @@
+If wanting to examine builtins, do auto complete on __builtin__(private attribute)
+
+similar task is to find an element in the string which you want to find through text processing
+lambda makes this useful in interactive
+
+print filter(lambda x: x.startswith('_C52C7F93_'), dir(cg))
+
+[ >> '_C52C7F93_54B9_11D3_ABF9_0040F6A4BFEC_0_1_0']
+>>> 
+
+then the string can be used to return a member of another object of this of this name
+dir(getattr(<target_object>,filter (<lambda function as above>,dir( <target_object>)))
+

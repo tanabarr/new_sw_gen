@@ -9,3 +9,7 @@ also select and say and tracking corrections works better with Dragon in notepad
 
 Don't change batch file file associations ,registry key removing needed for reset
 
+
+_Vimrc.vim & /vimfiles/ (same as .vim folder) auto loaded from gvim start-up settings through home environmental variable
+
+Ctags executable move to location found through Path environment variable

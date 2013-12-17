@@ -1,0 +1,38 @@
+workon tanproject
+  835  which python
+  836  /usr/bin/python --version
+  837  workon projects/tanproject/
+  838  ls tproject/
+  839  rmvirtualenv tproject
+  840  mkvirtualenv --no-site-packages tproject
+  841  workon tproject/
+  842  workon tproject
+  843  rm tadminproject/bin/python.exe
+  844  virtualenv-2.7 --no-site-packages -p python2.7 tadminproject
+  845  workon tadminproject
+  846  cd tad.vimrc
+  847  cd tadminproject/
+  848  ll
+  849  cd tadminsite/
+  850  pip
+  851  easy_install --version
+  852  which easy_install
+  853  ll ../bin/easy_install
+  854  whereis easy_istall
+  855  whereis easy_install
+  856  whereis easy_install-2.7
+  857  easy_install-2.7 pip
+  858  pip install django
+  859  whereis pip
+  860  which pip
+  861  which pip-2.7
+  862  pip-2.7 install django
+  863  backcountryls
+  864  cd ..
+  865  ls
+  866  cd mysite/
+  867  python manage.py runserver
+  868  history
+(tadminproject)
+TAN@ITW92620 ~/projects/tadminproject/mysite
+$

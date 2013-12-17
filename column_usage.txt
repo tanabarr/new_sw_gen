@@ -1,0 +1,4 @@
+column [-t|-c|-s|-x]
+table remove separator 
+c specifies with
+now using the align plug-in instead

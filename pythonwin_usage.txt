@@ -1,0 +1,16 @@
+Key mappings can be changed within pythonwin directory inside pywin/default.cfg
+remember that ctrl-up (and other directional is) are hijacked by autohotkey for window navigation.
+Remapped to ctrl-k (history up).
+
+python path can be set conveniently within IDE.
+Can analyse, using sys.modules populated from sys.path which should include directories from the pythonpathl
+
+doesn't automatically populate in modules, need to import
+obviously doesn't import errors exist.
+
+Once imported, create class instance and then use member functions.
+
+reload (module name) can be used to reload changes in the interactive window.
+
+Edit python path from the tools menu, add key and value (directory location of files to including path), require a class name, should then be able to import this class within interactive window.
+Keys need to be added directly underneath python path in the key hierarchy, once they directories added, should show up under relevant key in python path browser (recognised files) and class can be imported. (Do we really need to restart pythonwin)?

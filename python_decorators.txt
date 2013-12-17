@@ -1,0 +1,29 @@
+Variable scope and closure
+
+Functions remembering enclosing scope
+twhen returning function variable from function, this function reference is aware of its context when the enclosing function was called
+
+ >> Def out():
+...	x=1
+...	def in():
+...		print x
+...	return in
+
+ >> F=out()
+ >> F
+...	returns object identifier of in function
+ >> F()
+...	Prints "1", remembers what x was assigned when out was called.
+
+This is one of the premises of decorators, the same would apply if a variable was assigned from an argument passed in the call to out(). Because this is then stored as a local variable in out's scope, and accessible to "in" at the time it is returned from the outer function.
+
+Further reading: 
+Key parameter in python  "sorted" function. lambda
+
+Definition:
+adding custom functionality to a provided function - takes a function and returns a modified version.
+
+For example checking is done on input parameters before the original function being passed in this called, then the return value of the original function acting on the processed parameters is returned from the inner function and the outer function returns the new (inner) function which is a new, extended version of the function passed in. 
+
+Imagine a function that takes coordinate values, preprocessing of these can be provided by a decorator.
+SimeonFranklin.com/ python-decorators in 12-steps

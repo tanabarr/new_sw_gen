@@ -1,0 +1,500 @@
+    3  ll /etc/alternatives
+    4  ln -snf /usr/local/bin/vim.exe /usr/bin/vim-py.exe
+    5  /usr/sbin/alternatives --install /etc/alternatives/vim vim /usr/bin/vim-py.exe 80
+    6  /usr/sbin/alternatives --install /etc/alternatives/vim /usr/bin/vim /usr/bin/vim-py.exe 80
+    7  /usr/sbin/alternatives --install /usr/bin/vim vim /usr/bin/vim-py.exe 80
+    8  /usr/sbin/alternatives --config vim
+    9  vim 
+   10  history
+   11  the edit
+   12  vim 
+   13  python -V
+   14  cd ~/scratch
+   15  ls 
+   16  cd py
+   17  ls 
+   18  vim  hash.py
+   19  ./hash.py 
+   20  vim  hash.py
+   21  ./hash.py 
+   22  vim  hash.py
+   23  ./hash.py 
+   24  vim  hash.py
+   25  ./hash.py 
+   26  vim  hash.py
+   27  ls 
+   28  python -V
+   29  ls 
+   30  cd wedding_list/
+   31  vim list_parser3.py 
+   32  cd wedding_list/
+   33  ls 
+   34  ./list_parser3.py
+   35  vim name_list_9.txt 
+   36  cd wedding_list/
+   37  vim name_list_10.txt 
+   38  nmap 
+   39  ssh 192.168.64.1
+   40  ls 
+   41  are you are a you you you you you are you kickstart
+   42  cd wedding_list/
+   43  vim list_parser3.py
+   44  python list_parser3.py 
+   45  cp list_parser3.py /cygdrive/c/Python27/list_parser4.py 
+   46  whereis python 
+   47  locate MySQLdb
+   48  cp /cygdrive/u/software/linux_software/ 
+   49  cp /cygdrive/u/software/linux_software/MySQL-python-1.2.3.tar.gz /tmp/
+   50  cd /tmp
+   51  tar -xzf MySQL-python-1.2.3.tar.gz 
+   52  ls 
+   53  cd MySQL-python-1.2.3/
+   54  ls 
+   55  python setup.py install
+   56  cd ..
+   57  cp /cygdrive/u/software/linux_software/setup* /tmp/
+   58  ls 
+   59  rem
+   60  rpm
+   61  tar -xzf setuptools-0.6c11.tar.gz 
+   62  ls 
+   63  cd setuptools-0.6c11/
+   64  ls 
+   65  vim README.txt 
+   66  cd setuptools
+   67  ls 
+   68  cd ..
+   69  python setup.py install
+   70  cd ..
+   71  cd MySQL-python-1.2.3/
+   72  ls 
+   73  python setup.py install
+   74  python 
+   75  killall python 
+   76  cd ~/wedding_list/
+   77  vim list_parser3.py
+   78  python 
+   79  whereis MySQLdb
+   80  cd /lib
+   81  whereis site-packages
+   82  locate site-packages
+   83  find / -name site-packages
+   84  ctags -R *
+   85  cd ..
+   86  ln -snf /lib/tags lib_tags
+   87  ln -snf /lib/tags tags
+   88  rm lib_tags
+   89  ls 
+   90  cd ~/wedding_list/
+   91  ls 
+   92  vim ls 
+   93  vim list_parser3.py
+   94  vim ~/.bashrc
+   95  vim list_parser3.py
+   96  tail -n 7 ~/.bashrc
+   97  tail -n -6 ~/.bashrc
+   98  man tail
+   99  head -n +6 ~/.bashrc
+  100  head -n -6 ~/.bashrc
+  101  tail -n -6 ~/.bashrc
+  102  tail -n -6 ~/.bashrc >> ~/.vimrc
+  103  head -n -6 ~/.bashrc 
+  104  head -n -6 ~/.bashrc > ~/.bashrc
+  105  vim ~/.vimrc
+  106  vim list_parser3.py
+  107  vim ~/.vimrc
+  108  vim list_parser3.py
+  109  cd ..
+  110  scp -r wedding_list tom@btx:~/are going to go to
+  111  tail -n 8 ~/.vmirc
+  112  tail -n 8 ~/.vimrc
+  113  tail -n 8 ~/.vimrc | ssh tom@btx "echo - >> ~/.vimrc"
+  114  tail -n 8 ~/.vimrc | ssh tom@btx "echo \- >> ~/.vimrc"a go at
+  115  tail -n 8 ~/.vimrc | ssh tom@btx "echo >> ~/.vimrc"
+  116  tail -n 8 ~/.vimrc | ssh tom@btx 'cat >> ~/.vimrc'
+  117  cd wedding_list/
+  118  ls 
+  119  vim list_parser3.py
+  120  telnet 192.168.1.199 3306
+  121  ping 192.168.1.199
+  122  vim list_parser3.py
+  123  ls 
+  124  cd wedding_list/
+  125  ls 
+  126  ll
+  127  vim ls 
+  128  vim list_parser3.py
+  129  vim wedding_list/name_list_9.txt 
+  130  cd wedding_list/
+  131  vim list_parser3.py
+  132  vim list_parser3.py
+  133  cd wedding_list/
+  134  ls 
+  135  vim name_list_9.txt
+  136  cd wedding_list/
+  137  vim list_parser3.py
+  138  vim list_parser3.py
+  139  ls 
+  140  ll 
+  141  ls -la
+  142  ls wedding_list/
+  143  cd wedding_list/&
+  144  fg
+  145  cd wedding_list/
+  146  ls 
+  147  vim name_list_9-1.txt 
+  148  vim name_list_9-1.txt 
+  149  vim name_list_9-1.txt 
+  150  dos2unix name_list_9-1.txt 
+  151  vim name_list_9-1.txt 
+  152  vim list_parser3.py
+  153  cd wedding_list/
+  154  vim name_list_9-1.txt
+  155  ls 
+  156  vim db_manager.py
+  157  cat list_parser.py > db_manager.py
+  158  cat list_parser3.py > db_manager.py
+  159  ls 
+  160  vim db_manager.py 
+  161  cd wqe/
+  162  vim db_manager.py 
+  163  python db_manager.py 
+  164  python db_manager.py 
+  165  python db_manager.py 
+  166  python db_manager.py 
+  167  python db_manager.py 
+  168  python db_manager.py 
+  169  python  -V
+  170  python db_manager.py 
+  171  python db_manager.py 
+  172  python db_manager.py 
+  173  python db_manager.py 
+  174  python db_manager.py 
+  175  vim db_manager.py 
+  176  cd wqe/
+  177  ls 
+  178  ./db_manager.py
+  179  python -V
+  180  cd match
+  181  cd cd scratch
+  182  cd scratch
+  183  ls 
+  184  ll 
+  185  cd py
+  186  ls 
+  187  cd tmp/
+  188  ls 
+  189  vim rm_changeTasking.py 
+  190  exit
+  191  vim scratch/tmp/
+  192  vim scratch/tmp/componentConnectivityValidation.py 
+  193  vim scratch/tmp/taskCache.py 
+  194  cd scratch/tmp
+  195  ctags *
+  196  vim taskModel.py 
+  197  cd scratch/tmp
+  198  cd scratch/py/tmp/
+  199  ls 
+  200  vim test_tm.py 
+  201  ls 
+  202  cd scratch/py/tmp/
+  203  vim test_tm.py 
+  204  vim test_forkpty.py 
+  205  vim test_tm.py
+  206  cd scratch/py/tmp/
+  207  ls 
+  208  vim test_componentConnectivityValidation.py 
+  209  cd scratch/py/tmp/
+  210  vim test_forkpty.py
+  211  vim componentConnectivityValidation.py 
+  212  cd wqe/
+  213  ls 
+  214  vim db_manager.py
+  215  ln -snf wqe/db_manager.py database_manager
+  216  vim  database_manager
+  217  vim scratch/py/tmp/taskCache.py 
+  218  vim scratch/py/tmp/taskModel.py
+  219  vim database_manager
+  220  ls 
+  221  cd scratch
+  222  ls 
+  223  cp -r structure sig_test
+  224  mv sig_test soft_div
+  225  cd soft_div
+  226  ls 
+  227  mv structure.c soft_div.c
+  228  vim soft_div.c 
+  229  ls 
+  230  cd scratch
+  231  ls 
+  232  cd soft_div/
+  233  ls 
+  234  vim  soft_div.c
+  235  g++ -o sd soft_div.c 
+  236  :q
+  237  ls 
+  238  cd wqe
+  239  ls 
+  240  vim address_list_1.txt 
+  241  cd ../scratch/soft_stop listeningand fromls
+  242  cd ../scratch/soft_div/
+  243  ls 
+  244  g++ -o sd soft_div.c 
+  245  vim  soft_div.c
+  246  g++
+  247  g++ -V
+  248  g++ --version
+  249  ls 
+  250  cd scratch/soft_div/
+  251  ls 
+  252  vim soft_div.c
+  253  cd scratch/soft_div/
+  254  g++ -o sd soft_div.c 
+  255  ./sd.exe 
+  256  g++ -o sd soft_div.c 
+  257  ./sd.exe 
+  258  ./sd.exe a
+  259  ./sd.exe 1
+  260  ./sd.exe -a
+  261  ./sd.exe -a a
+  262  ./sd.exe -a 1
+  263  ./sd.exe -h
+  264  ./sd.exe -a = 1
+  265  ./sd.exe -a=1
+  266  ./sd.exe -a1
+  267  g++ -o sd soft_div.c 
+  268  ./sd.exe -a1Co-op
+  269  ./sd.exe -a 1
+  270  ./sd.exe -a 
+  271  ./sd.exe -a 900
+  272  ./sd.exe -a=900
+  273  g++ -o sd soft_div.c 
+  274  ./sd.exe -a=900
+  275  g++ -o sd soft_div.c 
+  276  ./sd.exe -a=900
+  277  ./sd.exe -a 900
+  278  g++ -o sd soft_div.c 
+  279  ./sd.exe -a 900
+  280  g++ -o sd soft_div.c 
+  281  ./sd.exe -a 900
+  282  g++ -o sd soft_div.c 
+  283  ./sd.exe -a 900
+  284  g++ -o sd soft_div.c 
+  285  ./sd.exe -a 900
+  286  g++ -o sd soft_div.c 
+  287  ./sd.exe -a 900
+  288  vim ~/.vimrc
+  289  g++ -o sd soft_div.c 
+  290  ./sd.exe -a 900
+  291  g++ -o sd soft_div.c 
+  292  ./sd.exe -a 900
+  293  ./sd.exe -a 900 -b 450
+  294  g++ -o sd soft_div.c 
+  295  ./sd.exe -a 900 -b 450
+  296  g++ -o sd soft_div.c 
+  297  ./sd.exe -a 900 -b 450
+  298  g++ -o sd soft_div.c 
+  299  ./sd.exe -a 900 -b 450
+  300  g++ -o sd soft_div.c 
+  301  ./sd.exe -a 900 -b 450
+  302  g++ -o sd soft_div.c 
+  303  ./sd.exe -a 900 -b 450
+  304  ./sd.exe -a 900 -b 15
+  305  ./sd.exe -a 900 -b 450
+  306  ./sd.exe -a 900 -b 15
+  307  g++ -o sd soft_div.c 
+  308  ./sd.exe -a 900 -b 15
+  309  g++ -o sd soft_div.c 
+  310  ./sd.exe -a 900 -b 15
+  311  g++ -o sd soft_div.c 
+  312  ./sd.exe -a 900 -b 15
+  313  ./sd.exe -a 900 -b 
+  314  ./sd.exe -a 900 -b 15
+  315  g++ -o sd soft_div.c 
+  316  ./sd.exe -a 900 -b 15
+  317  g++ -o sd soft_div.c 
+  318  ./sd.exe -a 900 -b 15
+  319  ./sd.exe -a 900 -b 
+  320  ./sd.exe -a 900 -b 1
+  321  g++ -o sd soft_div.c 
+  322  ./sd.exe -a 900 -b 1
+  323  g++ -o sd soft_div.c 
+  324  ./sd.exe -a 900 -b 1
+  325  g++ -o sd soft_div.c 
+  326  ./sd.exe -a 900 -b 1Co-op
+  327  ./sd.exe -a 900 -b 15:
+  328  ./sd.exe -a 900 -b 16
+  329  ./sd.exe -a 900 -b 15
+  330  ./sd.exe -a 900 -b 16
+  331  g++ -o sd soft_div.c 
+  332  ./sd.exe -a 900 -b 16
+  333  ./sd.exe -a 900 -b 15
+  334  ./sd.exe -a 30 -b 15
+  335  g++ -o sd soft_div.c 
+  336  ./sd.exe -a 30 -b 15
+  337  g++ -o sd soft_div.c 
+  338  ./sd.exe -a 30 -b 15
+  339  cd scratch/soft_div/
+  340  g++ -o sd soft_div.c 
+  341  ./sd.exe -a 30 -b 15
+  342  g++ -o sd soft_div.c 
+  343  ./sd.exe -a 30 -b 15
+  344  g++ -o sd soft_div.c 
+  345  ./sd.exe -a 30 -b 15
+  346  g++ -o sd soft_div.c 
+  347  ./sd.exe -a 30 -b 15
+  348  ./sd.exe -a 8 -b 2
+  349  ./sd.exe -a 8 -b 4
+  350  ./sd.exe -a 100 -b 2
+  351  ./sd.exe -a 10 -b 2
+  352  t
+  353  exit
+  354  t
+  355  exit
+  356  vim .vimrc
+  357  vim --version
+  358  ctags --version
+  359  whereis ctags
+  360  /bin/ctags --version
+  361  /usr/bin/ctags --version
+  362  cd scratch/soft_div/
+  363  ./sd.exe -a 10 -b 2
+  364  g++ -o sd soft_div.c 
+  365  ./sd.exe -a 10 -b 2
+  366  g++ -o sd soft_div.c 
+  367  ./sd.exe -a 10 -b 2
+  368  g++ -o sd soft_div.c 
+  369  ./sd.exe -a 10 -b 2
+  370  g++ -o sd soft_div.c 
+  371  ./sd.exe -a 10 -b 2
+  372  g++ -o sd soft_div.c 
+  373  ./sd.exe -a 10 -b 2
+  374  ./sd.exe -a 10 -b 1
+  375  g++ -o sd soft_div.c 
+  376  ./sd.exe -a 10 -b 1
+  377  g++ -o sd soft_div.c 
+  378  ./sd.exe -a 10 -b 1
+  379  ./sd.exe -a 10 -b 2
+  380  ./sd.exe -a 10 -b 10
+  381  ./sd.exe -a 10 -b 11
+  382  ./sd.exe -a 10 -b 9
+  383  ./sd.exe -a 10 -b 5
+  384  ./sd.exe -a 10 -b 4
+  385  ./sd.exe -a 10 -b 3
+  386  ./sd.exe -a 100 -b 10
+  387  ./sd.exe -a 900 -b 10
+  388  ./sd.exe -a 950 -b 10
+  389  ./sd.exe -a 950 -b 13
+  390  g++ -o sd soft_div.c 
+  391  ./sd.exe -a 950 -b 13
+  392  ./sd.exe -a 950 -b 13 -A
+  393  g++ -o sd soft_div.c 
+  394  ./sd.exe -a 950 -b 13 -A
+  395  ./sd.exe -a 950 -b 13
+  396  950/3
+  397  echo 950/3
+  398  let a =   950/3
+  399  let a=950/3
+  400  echo a
+  401  echo $a
+  402  vim .vimrc
+  403  vim ~/.vimrc
+  404  ctags -R *
+  405  vim ~/.vimrc
+  406  ls 
+  407  vim soft_div.c
+  408  cd scratch/soft_div/
+  409  ls 
+  410  vim  soft_div.c
+  411  cd scratch/soft_div/
+  412  ls 
+  413  vim soft_div.c
+  414  g++ -o struct structure.c 
+  415  g++ -o sd soft_div.c 
+  416  vim soft_div.c
+  417  g++ -o sd soft_div.c
+  418  ls 
+  419  cd scratch/soft_div/
+  420  ls 
+  421  ./sd.exe -a 950 -b 13
+  422  g++ -o sd soft_div.c
+  423  ./sd.exe -a 950 -b 13 -A
+  424  g++ -o sd soft_div.c
+  425  ./sd.exe -a 950 -b 13 -A
+  426  g++ -o sd soft_div.c
+  427  ./sd.exe -a 950 -b 13 -A
+  428  python -V
+  429  python3 -V
+  430  ls 
+  431  cd wqe/
+  432  ls 
+  433  python db_manager.py 
+  434  python3 db_manager.py 
+  435  exit
+  436  ln -snf /cygdrive/c/NatLink/NatLink/MacroSystem/ voice_macros
+  437  ls 
+  438  ln -snf /cygdrive/u/software/linux_software/ linux_software
+  439  ln -snf /cygdrive/u/ share_home
+  440  ls 
+  441  vim .bashrc
+  442  vim .bash_profile 
+  443  rm base common source
+  444  ls 
+  445  cd voice_macros
+  446  ls 
+  447  vim _mouseKeyboardUtilities.py
+  448  exit
+  449  vim .bashrc
+  450  . .bashrc
+  451  ls 
+  452  rm base,common
+  453  rm base common
+  454  rm *CD*
+  455  rm source
+  456  ls 
+  457  . .bashrc
+  458  cd scratch
+  459  ls 
+  460  cd soft_div/
+  461  ls 
+  462  vim soft_div.c
+  463  exit
+  464  ls 
+  465  cd voice_macros
+  466  ls 
+  467  vim _mouseKeyboardUtilities.py
+  468  cd voice_macros
+  469  ls 
+  470  vim _mouseKeyboardUtilities.py
+  471  whereis setuptls 
+  472  whereis setuptoolsare you
+  473  cd wqe
+  474  python3 db_manager.py 
+  475  vim db_manager.py
+  476  python3 db_manager.py 
+  477  vim db_manager.py
+  478  python -3 db_manager.py 
+  479  cd ..
+  480  ls
+  481  cd scratch/soft_div/
+  482  ls
+  483  vim soft_div.c
+  484  easy_install virtualenv
+  485  easy_install virtualenvwrapper
+  486  vim ~/.bashrc
+  487  . ~/.bashrc
+  488  mkdir ~/projects
+  489  cd ~/projects
+  490  mkvirtualenv --no-site-packages myproject
+  491  ls 
+  492  cd myproject/
+  493  ls 
+  494  workon myproject
+  495  ls 
+  496  easy_install pip
+  497  pip install django
+  498  ls 
+  499  :q
+  500  exit
+  501  history
+  502  history>~/linux_software/django_setup_hist.txt

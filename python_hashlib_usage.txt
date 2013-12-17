@@ -1,0 +1,20 @@
+Hashlib
+
+r example, to obtain the digest of the string 'Nobody inspects the spammish repetition':
+
+>>> import hashlib
+>>> m = hashlib.md5()
+>>> m.update("Nobody inspects")
+>>> m.update(" the spammish repetition")
+>>> m.digest()
+'\xbbd\x9c\x83\xdd\x1e\xa5\xc9\xd9\xde\xc9\xa1\x8d\xf0\xff\xe9'
+>>> m.digest_size
+16
+>>> m.block_size
+64
+
+
+In order to print use format 'blah blah blah %s %s would press ' % (<first element>, <second element>) 
+and use hexdigest () to print out. 
+
+You trying arsh against an incomplete object, can use update to the different components 
