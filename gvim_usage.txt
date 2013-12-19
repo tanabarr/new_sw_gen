@@ -1,7 +1,7 @@
  setting up gvim as default editor, replacing notepad and WordPad
 ensure start-up settings runs your "_vimrc.vim" (including a source command)
 removed behaves as Microsoft Windows command in start-up settings
-Set up so that each file opened is opened in the same instance, can do this either by setting a custom command string for file association from the command prompt, or for a more portable solution in my situation, cvim.bat in win scripts is selected in file association which runs the given file name with extra parameters using gvim.
+Set up so that each file opened is opened in the same instance, can do this either by setting a custom command string for file association from the command prompt, or for a more portable solution in my situation, cvim.bat in win scripts is selected in file association which runs the given file name with extra parameters using gvim to specify that files are opened with the same instance of the application.
 
 
 Leave text files as opening in notepad, useful to have the multiple windows lying around and not automatically closed
@@ -11,5 +11,8 @@ Don't change batch file file associations ,registry key removing needed for rese
 
 
 _Vimrc.vim & /vimfiles/ (same as .vim folder) auto loaded from gvim start-up settings through home environmental variable
+need to ensure these aren't network files that haven't been made available off-line
+vimfiles moved into dropbox folder, pointed to in _vimrc (runtime)
+these files may to be loaded before pathogens called in the vimrc
 
 Ctags executable move to location found through Path environment variable
