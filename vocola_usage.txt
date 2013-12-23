@@ -17,3 +17,9 @@ Applications specific commands for cygwin & putty use header file to put in vim 
 
 101213:
 Problem with using some vim commands on Linux bashed Shell, mainly related to not returning to insert mode.
+
+221213:
+dragonfly handling of continuous recognition and prefix formatting e.g. "studley <text>"
+move "-\hyphen 8" from unimacro general and "cap" and camel case commands from vocala global. formats renamed(upper/all together, upper score etc, func score)
+add "|" key to multi-\ edit dragonfly ini file lookin action_keys.py
+fixed phantom ^X key on "between" grammars when running in Shell(including vim command mode)
