@@ -23,3 +23,6 @@ dragonfly handling of continuous recognition and prefix formatting e.g. "studley
 move "-\hyphen 8" from unimacro general and "cap" and camel case commands from vocala global. formats renamed(upper/all together, upper score etc, func score)
 add "|" key to multi-\ edit dragonfly ini file lookin action_keys.py
 fixed phantom ^X key on "between" grammars when running in Shell(including vim command mode)
+
+080114:
+tweaks and mods, line numbering

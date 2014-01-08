@@ -276,3 +276,18 @@ Total process for adding new repositories
 add empty repository on website
 through local cgwin terminal initialise repository in target folder, added the remote repository, add and commit required files, push master to origin
  >> 
+
+/*****************************************//*****************************************/
+080114
+
+Troubleshooting error when committing
+head out of sync
+
+Either the signatures of the local working branch is different to the tracking branch on the local system
+or the local tracking branch is mismatched with the remote target branch
+or the content is different
+
+Fetch --all //will update the tracking branch locally
+merge origin master //will merge local changes onto local tracking branch
+push --force origin master //will force most changes even in out of date with remote
+branch -va //so details of branches and whether behind or ashead
