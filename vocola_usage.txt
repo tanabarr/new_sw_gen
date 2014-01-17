@@ -26,3 +26,9 @@ fixed phantom ^X key on "between" grammars when running in Shell(including vim c
 
 080114:
 tweaks and mods, line numbering
+
+160114:
+2.8.1 vocola offers when and if built-in. Reduce any commands that we repeat for an optional variable using when
+can perform branching using if
+updates need to be loaded from CD from modifications done at work
+line numbering example given in "alternative words" section on vocola website
