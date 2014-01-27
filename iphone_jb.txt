@@ -1,0 +1,12 @@
+270114
+
+Iphone 5 io7 update with jailbreak
+evasi0n 1.7.4?
+backup to computer
+download and install the update (had to restore, showed some errors)
+install carrier update (necessary to avoid errors)
+had to perform a combination of manual activation, backing up from my cloud and local storage, disable the find my phone feature for local backup.
+Doesn't seem to be able to restore applications
+
+Moved the jailbreak files to local disk, switch to non-domain user/local administrator(.\TAN user)
+run jailbreak on phone
