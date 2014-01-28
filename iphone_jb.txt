@@ -10,3 +10,8 @@ Doesn't seem to be able to restore applications
 
 Moved the jailbreak files to local disk, switch to non-domain user/local administrator(.\TAN user)
 run jailbreak on phone
+
+Veeency just had an update today 270114 to be supported on ios7
+updated this through cydia.
+
+Change tightVnc encoding to use hextile, no copyrect and no mouse pointer. connection infile saved
