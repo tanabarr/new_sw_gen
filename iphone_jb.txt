@@ -15,3 +15,9 @@ Veeency just had an update today 270114 to be supported on ios7
 updated this through cydia.
 
 Change tightVnc encoding to use hextile, no copyrect and no mouse pointer. connection infile saved
+
+selected local Cursor, recommended not to but remote cursor not yet supported!
+
+callcontroller allows for automatic answering and Bluetooth trigger(only activated when Bluetooth connected)
+
+Text input gets confused if voice recognition in normal mode, using"say…" seems to work okay. spelling sometimes requires "press..."
