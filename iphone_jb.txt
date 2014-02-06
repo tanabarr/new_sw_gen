@@ -21,3 +21,4 @@ selected local Cursor, recommended not to but remote cursor not yet supported!
 callcontroller allows for automatic answering and Bluetooth trigger(only activated when Bluetooth connected)
 
 Text input gets confused if voice recognition in normal mode, using"say…" seems to work okay. spelling sometimes requires "press..."
+If in spelling mode can dictate in triplets to avoid character latching
