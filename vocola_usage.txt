@@ -32,3 +32,11 @@ tweaks and mods, line numbering
 can perform branching using if
 updates need to be loaded from CD from modifications done at work
 line numbering example given in "alternative words" section on vocola website
+
+120214:
+line numbering has been sorted 
+new Editing priorities:
+(sink from downstairs to laptop)
+skipping position in line
+editing a particular line
+supertab (transfer from laptop)
