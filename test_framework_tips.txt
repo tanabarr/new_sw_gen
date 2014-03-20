@@ -1,0 +1,72 @@
+test framework tips
+problem with the framework. Getting too complicated
+for debugging and sanity purposes try to isolate initialisation and processing as much as possible
+keep track of system context (information that applies to the platform, service location and availability)
+
+In test framework initialisation, reading system parameters and availability of system resources into a global dictionary. this dictionary should persist for the duration of the test framework instance.
+information that should be added to the dictionary objects during first initialisation includes the availability of resources (meaning they are present on the local system and accessible).
+
+It is assumed that during the first initialisation, setup and teardown tasks will be performed, some platform specific information will be retained in global dictionary but all dynamic information will be reset.
+
+During setup and teardown, the class instantiated and destroyed should be passed the global dictionary.
+Dynamic information required during specific tests (between setup and teardown) should be contained as a tribute of the class object as opposed to in the global dictionary, this will avoid confusion between test variables and platform specific/framework instance variables. (Examples include files/Shell handles which are not system meta data, runtime index numbers, runtime initialisation result)
+
+In teardown, this dynamic data should be destroyed (if the class object is created in initialisation, it should be destroyed automatically and go out of scope on teardown, along with the dynamic variables attached as a tributes during the test)
+
+keep everything in the expect object that needs to be cleaned up. So keep a list of active resources and use this to clean up at the end. So use exception handling say where necessary. Ensure no tests are run on resources that have not been successfully initialised.
+
+warning: handles may be tied and exceptions not handled properly
+resources should be accessed and attributes created in the process should be sent to none if unsuccessful immediately
+teardown should close all active resources.
+
+Iter resources in static global dictionary: -> yields obj
+  try: if obj.avail = no: continue
+  except: init(self.active) - update list with name if initialisation success, set obj.avail on static mitigate object inside global dictionary(indicating the resource is unavailable for the remainder of testing-static value)
+
+test system under test + one other test (control) both existing in the list (of active resources)
+
+If satisfied, use list to perform tests on those resources contained in the active list
+
+-System available in global dictionary
+-system index,expect handle in expect object
+-expect close cleans up index and handle,ensure called after each test
+
+/*****************************************//*****************************************/
+
+  1 #!/bin/bash¬
+  2 # create table and populate¬
+  3 exec &> sqlite3.log¬
+  4 command="sqlite3 example.db "¬
+  5 echo "CREATE TABLE IF NOT EXISTS table_1 \¬
+  6 (Random_String_Field VARCHAR(512),\¬
+  7 Random_IP VARCHAR(512),\¬
+  8 First_Name VARCHAR(512),\¬
+  9 Last_Name VARCHAR(512));" > create¬
+ 10 echo "DROP TABLE table_1;" > drop¬
+ 11 echo ".schema table_1" > describe¬
+ 12 echo "ALTER TABLE table_1 ADD col_image BLOB;" > alter¬
+ 13 echo "SELECT First_Name FROM table_1;" > select_name¬
+ 14 #echo "DESCRIBE table_1;" > describe¬
+ 15 #echo "LOAD DATA INFILE;" > load¬
+ 16 echo "attempting select..."¬
+ 17 $command < select_name¬
+ 18 echo "dropping table"¬
+ 19 $command < drop¬
+ 20 echo "creating table"¬
+ 21 $command < create¬
+ 22 $command < describe¬
+ 23 echo " TABLE table created\n"¬
+ 24 echo "attempting select..."¬
+ 25 $command < select_name¬
+ 26 echo "inserting test data"¬
+ 27 $command < datagen_sql.txt¬
+ 28 #echo "table #populated\n"¬
+ 29 echo "attempting select..."¬
+ 30 $command < select_name¬
+ 31 echo "modify table\n"¬
+ 32 $command < alter¬
+ 33 $command < describe¬
+ 34 ¬
+ 35 echo "attempting select..."¬
+ 36 $command < select_name¬
+ 37 ¬
