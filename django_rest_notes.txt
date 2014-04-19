@@ -1,0 +1,9 @@
+Typical focus on serialisation and deserialisation between Python datatypes and JSON, less focus on templates and actual   HTML (much more done under the hood).
+
+use of models, url routers, custom serialisers
+
+serialisation functions taking the object to be serialized and returning a serialisation object, deserialisation done by calling the serialiser with a "data=" parameter. detection of whether to deserialise is done under the hood?
+
+modelserialiser subclass reduces the replication of code in the desired model.
+
+similar idea with view sets

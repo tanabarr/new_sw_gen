@@ -12,7 +12,11 @@ Don't change batch file file associations ,registry key removing needed for rese
 
 _Vimrc.vim & /vimfiles/ (same as .vim folder) auto loaded from gvim start-up settings through home environmental variable
 need to ensure these aren't network files that haven't been made available off-line
-vimfiles moved into dropbox folder, pointed to in _vimrc (runtime)
+vimfiles moved into win scripts folder, pointed to in _vimrc (runtime)
 these files may to be loaded before pathogens called in the vimrc
 
 Ctags executable move to location found through Path environment variable
+
+file associations changed for .py,.vcl/h,.ini
+
+change "edit" meta command in unimacro/actions.ini to not open txt files in notepad. So this will enable "folder commands" has an example to open in gvim

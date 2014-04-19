@@ -1,4 +1,9 @@
-0django usage
+django usage
+
+paradigms: 
+models and objects:
+model class >> database table
+model class instance >> database record in table
 
 django installed on cygwin using virtual environment:
 virtualenv+ wrapper
@@ -64,4 +69,46 @@ Directory structure is virtual(env) directory (projects)/virtual environment (ta
 
 administrator site login
 tan
-standard password
+password: password
+
+/*****************************************//*****************************************/
+----
+020414
+
+New environment: rest_test_env
+
+installing a new Django environment, follow standard virtual environment set up (virtualenv_usage.txt)
+>pip list
+>Pip search django
+>pip install django==1.5
+install the rest framework
+>pip install djangorestframework==2.3.6
+start the project and run
+>Django-admin.py startproject site1
+>cd site1
+>python manage.py runserver
+can then navigate to local host: 8000 to see the test page
+
+Copied across projects/myproject/mysite/{polls} application directory and projects/myproject/sitetemplates 
+edited in place Envs/rest_test_env/site1/site1  files including urls,settings to take into account relevant file changes in projects/myproject/mysite/mysite/*
+mainly regarding the linking of the site to the polls model
+
+In order to build database objects mapped to buy the provided models, run:
+>python manager.py syncdb
+
+
+If receiving the resource temporarily unavailable error, try closing the webpage and try to run runserver again.
+This unfortunate doesn't was do the trick, investigate rebaseall (to do)
+
+Do requirements capture for the environment 
+>Pip freeze --local
+
+----
+transplanting to ub 1204tom:
+
+make virtual environment,use the correct instructions
+install environment using pip install -r <requirements_file>
+after environment is working correctly, copy across files, ee.it settings.y to specify correct location for database file
+>syncdb
+>runserver 0.0.0.0:8000 to make available on all public IP 's
+navigate to http://ub1204tom:8000/polls/

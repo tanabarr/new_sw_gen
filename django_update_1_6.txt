@@ -1,0 +1,47 @@
+----
+160414
+
+using very old pip 1.2.1 (1.5.4 is current)
+manual update packages
+problem with installing PyYAML
+
+Manually installed packages not named distribute,setup tools, Django*…
+
+Application seems to work.
+Updated dev_requirements.txt in project_source/conf/
+added extra packages to project_source/packages/
+(now contains a superset) but don't know where these are pulled from?
+
+Strange behaviour when adding a task? Symptom seems to have appeared since moving to Django 1.6
+output from WebServer: POST /tasks/api/create/ HTTP/1.1" 400 173
+
+When running this with Django 1.5, when you save  comes up with task saved to warrant
+output from WebServer: POST /tasks/api/create/ HTTP/1.1" 200 2277
+
+----
+update required due to optimisations  in database interaction
+
+Django update:
+new requirements.txt, 
+create a new environment with --copy-all to make it self-contained.
+install from requirements file, old package versions
+pip install --upgrade <package_names>
+new package is should then be contained within .pip dir
+can then transfer env folder to different system
+edit wiki with Django update page
+
+----
+150414
+
+--– Copy all didn't seem to work
+
+Upgrade packages within environment
+refer to fast install in pip help to see how to install from local
+so do freeze local and then run command to save these packages locally.
+copy requirements and package repository
+
+Django-Nose-selenium 0.7.5 seems to not be found in normal repositories, deprecated since django 1.4, selnose iz potential replacement package
+
+new requirements file stop @ requests, needs completing
+
+Restart from fresh virtual …
