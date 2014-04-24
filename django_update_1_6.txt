@@ -1,3 +1,22 @@
+bug: 6639
+
+----
+230414
+
+Django environment set up for 1.6 & 1.5
+site runs fine for 1.5 
+(move apps directory changes to 6640 branch (avoiding any .svn dirs; cp -r <b#6639:/apps/domains> <b#6640:/apps/> domains, also copy the following: warrants/models.py tasks/models.py), backup then remove apps directory on branch 6639 then run sub update, alternatively if in rush: cd project_source; tar -cf ~/bkvims.tar vims; rm -rf vims; sub up)
+
+some updates to Django 1.6 compatible packages not possible because of old distribute/setuptools/pip versions
+with new version problem with adding a task
+don't want to have to go through GUI\ to run the tests manually...
+
+cannot run rest tests for reggression testing purposes
+
+angular:
+after following wiki "adding example feature"
+how to get new features to turn up on the bar at the top
+
 ----
 160414
 

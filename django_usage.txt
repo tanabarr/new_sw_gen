@@ -112,3 +112,37 @@ after environment is working correctly, copy across files, ee.it settings.y to s
 >syncdb
 >runserver 0.0.0.0:8000 to make available on all public IP 's
 navigate to http://ub1204tom:8000/polls/
+
+----
+making model changes
+3 steps:
+change models.py 
+ >> python manage.py makemigrations 
+(to create migrations from this changes)
+ >> python manage.py migrate 
+(to apply those changes to the database)
+
+----
+Exploring apih with the shell
+
+ >> python manage.py shell
+this automatically sets the import path to the settings module
+
+dbshell gives your database prompt
+e.g. with sqlite3
+ >> ...dbshell (as before)
+ >> tables
+ >> .schema <tablename>
+etc.
+----
+How to present a list of strings from provided source? 
+
+----
+Serialisers and views
+
+Views are activated by URL changes
+these can call serialisers to convert between the python objects and JSON objects or just perform direct actions
+
+Perform things like validation in serialisers
+perform things like tasks not provided by model in view
+l

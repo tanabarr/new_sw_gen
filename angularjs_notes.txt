@@ -1,0 +1,4 @@
+
+Navbar 
+
+Angjs nav.html hardcoded references to models which provide URL direction(<model name>.js). this is in parallel with the urls django file
