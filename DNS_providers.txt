@@ -1,0 +1,175 @@
+
+
+
+From: Rajiv Bose 
+Sent: Wednesday, April 30, 2014 11:04 AM
+To: Tom Nabarro 
+Subject: Re: Fw: Your Dyn account status will change in 14 days
+
+
+tomnabarro.com is a registered domain. 
+
+ 
+Whomever you have registered the domain with (e.g. http://uk.godaddy.com or http://123-reg.co.uk) will allow you to log into that site with your account details (probably your whizz2000@hotmail.com and a password).
+
+ 
+The account details that you hold with your domain name provider will give you access to things like; billing and payment, next payment due to domain lease expiration, and DNS settings. It's the DNS settings that are the interesting bit.
+
+ 
+In the DNS settings for the domain provider you must nominate what IP address tomnabarro.com will resolve to. Obviously, in your case, the IP for tomnabarro.com directs to the WordPress blog that you maintain. If I do a quick nslookup on tomnabarro.com I can see that it points at 50.22.11.19.
+
+ 
+Now, although a single root domain is mapped to just one IP address, each of its sub-domains can be mapped to an alternative IP address of their own [1]. So, if tomnabarro.com -> 50.22.11.19, then you can add a DNS record [2] which says that standlake.tomnabarro.com -> 77.95.178.15 (where 77.95.178.15 would be the static IP of your super-fast broadband at The Warren). Consequently, anyone accustomed to visiting tomnabarro.com for your blog would be completely unaffected, and you would be able to use a familiar and easy to remember sub-domain to root through to your home network. Smart shit, huh?! :D
+
+ 
+One of the reasons why I was hoping to encourage Susie with super-fast broadband for smr was to have lesbose.com point to a cheap and cheerful web server running on the NAS box at smr, and have mail.lesbose.com direct to the FastPass service I'm not using for email. Alas, this luxury must wait.
+
+ 
+Hope it helps,
+
+Raj.
+ 
+[1] - I say it "can be mapped to an alternative IP", but that is not the only way in which sub-domains can be used. If a sub-domain of ftp.tomnabarro.com were added, and it too pointed at 50.22.11.19, then the Apache server running on 50.22.11.19 could be configured to: direct all tomnabarro.com requests to a WordPress site, and direct all ftp.tomnabarro.com requests to a locally running ftp server.
+
+ 
+[2] - To add a sub-domain with an alternative IP address The type of DNS record you need to add is an A record for the sub-domain. This might be useful if more info is needed: http://support.dnsimple.com/articles/differences-between-a-cname-alias-url/
+ 
+
+ 
+ 
+On Wed, 30 Apr 2014, at 1:46, Tom Nabarro wrote:
+
+Would I be able to route traffic back to my home server via tomNabarro.com using some sort of redirection?
+
+ 
+From: Rajiv Bose 
+
+Sent: Tuesday, April 29, 2014 11:41 AM
+
+To: Tom Nabarro 
+
+Subject: Re: Fw: Your Dyn account status will change in 14 days
+
+ 
+On most routers dyndns.com was the only built-in solution for a dynamic dns server. Alternatives include (e.g. no-ip.com), but none of the alternatives are supported by most domestic routers (e.g. my Netgear, and all Netgears I've seen, only support dyndns,com). Now that that's not a free server, this sucks.
+
+ 
+
+https://scotthelme.co.uk/replacing-dyndns-cloudflare-ddns/
+
+ 
+
+This post pretty much suggests the only viable alternative. You're going to have to setup a cron / process on a 24-7 comp that will periodically update a ddns record on some alternative service. Where this was previously managed by the router (each time the ISP changed the assigned public ip for your router) it will no have to be a crude polling task.
+
+ 
+
+:( this sucks, and affects me too.
+
+ 
+
+However, it might be worth bearing in mind, when you get super fast broadband it does typically come with a static IP... so, when S.Lake gets hooked up, get the service and just register a domain... In fact, if Els wants a site, I'd look into buying a domain or two now. They're pretty cheap. 
+
+ 
+
+I used these guys, http://www.freezone.co.uk and they were cheap. If you are thinking about buying a domain (although you already have tomnabarro.com) anything with a .co.uk suffix is required to have publicly available information regarding with whom the domain is registered (i.e. undoing any hope of anonymity). So, got for anything that's .com (or .io if you're feeling hip).
+
+ 
+
+ 
+
+Raj.
+
+ 
+
+ 
+
+ 
+
+On Thu, 24 Apr 2014, at 1:57, Tom Nabarro wrote:
+
+    How you doing mate
+
+hope the interview went well
+
+maybe see you tomorrow afternoon(not the evening) or Sunday if you are free?
+
+Do you know any free alternatives for dyndns, they are stopping the free service I use
+
+cheers 
+
+ 
+
+From: Dyn 
+
+Sent: Wednesday, April 23, 2014 3:04 PM
+
+To: whizz2000@hotmail.com 
+
+Subject: Your Dyn account status will change in 14 days
+
+ 
+
+ 
+ Web Version 
+   
+     
+    
+    
+    
+   
+  
+
+   
+  To our Dyn free hostname users:
+
+
+This email is an reminder that Dyn's free hostname program will be ending on Wednesday, May 7th -- 14 days from today. If you are receiving this email, you have one or multiple free hostnames with us. 
+
+
+In order to avoid any service disruption, you have the option to upgrade to VIP status at a one-time 25% discount, good for any package of Remote Access (formerly DynDNS Pro). By doing so, you'll have immediate access to customer support, additional hostnames, and more.
+
+
+ 
+
+Note: if you are currently a customer of another paid Dyn service (ex. Dyn Standard DNS or Dyn Email Services) and also utlize free hostnames in your account, you must purchase Remote Access for those hostnames. 
+
+ 
+
+Here's how you get this done in two easy steps:
+
+ 
+
+1) Login to account.dyn.com.
+
+2) Click here to add Remote Access to your cart at the one-time 25% discount, applied upon checkout.
+
+ 
+
+If you have additional questions about the changes, please visit our FAQ page or email userhelp@dyn.com for assistance.
+   
+  
+      
+ 
+ 
+
+   
+ 
+  
+  Dyn
+
+Global HQ
+
+150 Dow Street – Tower Two
+
+Manchester, NH 03101
+ Remove yourself from this list 
+   
+  
+ 
+ 
+ 
+
+
+
+
+ 

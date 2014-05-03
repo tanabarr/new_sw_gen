@@ -134,6 +134,14 @@ e.g. with sqlite3
  >> tables
  >> .schema <tablename>
 etc.
+
+syncdb will not alter existing tables
+
+In order to update attributes and types, remove test database file, s
+ncdb to create the tables, test with :
+ >> ./manage.py sql domains
+(domains is the application name)
+
 ----
 How to present a list of strings from provided source? 
 
@@ -145,4 +153,3 @@ these can call serialisers to convert between the python objects and JSON object
 
 Perform things like validation in serialisers
 perform things like tasks not provided by model in view
-l
