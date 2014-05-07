@@ -7,3 +7,26 @@ Options for working on a remote system/source base
 svn
 deployment over sftp or similar
 can synchronise code and control how code pushed/pulled
+
+Follow link for remote server configuration:
+https://www.jetbrains.com/pycharm/webhelp/creating-a-remote-server-configuration.html
+
+Set up remote server (Atlas) with normal Linux credentials
+this is within the deployment setting section
+setup remote interpreter, copying the deployment settings
+this is within python interpreters and targets the required virtual environment you will be using
+probably best using static one
+
+
+temporary directory set up for synchronising with charm:
+ >> ~/charm/
+
+mapping setup between local project directory and remote deployment directory
+
+svn check out into local project from repository, interpreter and remote deployment directory mapped to development system
+edit and debug locally using remote interpreters, running web server on remote development system
+commit changes directly from local system back to repository
+local changes synchronised with remote deployment directory
+
+Problem when running WebServer with duplicated home directory path, so remember to set d
+ango deployment chroot and then mapping directories relative to this. e.g. root path = ~tan, mappings>remote directory = /charms
