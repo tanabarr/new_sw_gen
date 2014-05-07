@@ -1,1 +1,9 @@
 good editor for Java and python 
+
+Pycharm remote deployment
+
+Options for working on a remote system/source base
+
+svn
+deployment over sftp or similar
+can synchronise code and control how code pushed/pulled

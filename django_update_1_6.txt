@@ -1,4 +1,70 @@
 bug: 6650
+----
+060514
+
+Test procedure steps:
+
+----
+versioned files reset as outlined below.
+
+source vims/run_test_commands.sh
+(depends on install_environment.sh, install_packages, deploy_test.sh & reset_test_db)
+performs creation and installation of environment, through virtualenv, install_packages_and_then deploy_test, restarts database with reset_test_db
+then runs tests
+
+changes to versioned files:
+
+provision.yml now doesn't check for type of test before resetting database
+
+Note: install_packages seems to only install distribute 0.7.3
+
+----
+changes to versioned files:
+
+test_requirements.txt:
+Django >> 1#.6.2
+distribute >> 0 .7 .3
+
+note: breaks tests
+
+----
+changes to versioned files:
+
+revert to original test requirements
+remove running of install_packages script
+tests still run with deploy_test
+
+Remove any reference to distribute, stop deploy script from trying to install python system packages
+now only using setuptools-0.8.
+
+note: python-setuptools.rpm is installing old version, we can ignore this using virtualenvs
+
+----
+changes to versioned files:
+
+Updates committed,distribute package dependency removed update to setuptools0.8
+
+----
+changes to versioned files:
+
+package update to django1.6
+
+Note:test broke: error messages:emergency flag may not be null
+
+website will no longer appear
+
+upgrade django-waffle
+
+website appears but does not login
+
+upgrade django-*
+
+no login screen
+
+syncdb run
+
+now doesn't save warresant
+
 
 ----
 300414
