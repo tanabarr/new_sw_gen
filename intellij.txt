@@ -30,3 +30,23 @@ local changes synchronised with remote deployment directory
 
 Problem when running WebServer with duplicated home directory path, so remember to set d
 ango deployment chroot and then mapping directories relative to this. e.g. root path = ~tan, mappings>remote directory = /charms
+
+----
+080514
+
+New project to manage new branch checkout just vims directory first
+then enabled version control on project (simply press okay, so should already have URL)
+so that you can update and commit from the vcs toolbar option
+
+Don't forget to deploy updated files before running tests
+
+Ensure mapped directories are what you think they are, including remote root directory
+
+update interpreter location before next run. django-test-env is edited by run test script
+
+
+
+
+
+
+t
