@@ -44,9 +44,11 @@ Ensure mapped directories are what you think they are, including remote root dir
 
 update interpreter location before next run. django-test-env is edited by run test script
 
+----
+130514
 
+When you deploy it doesn't deploy with desired permissions
+need to enable execute on the required scripts
 
-
-
-
-t
+Checkout on~/charm, run tests
+problems were to do with python path environment variable
