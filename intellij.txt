@@ -52,3 +52,12 @@ need to enable execute on the required scripts
 
 Checkout on~/charm, run tests
 problems were to do with python path environment variable
+
+
+----
+150514
+
+Intellij idea
+
+virtual environment set up as python SDKs, project structure settings, not normal project settings
+change packages through tools menu
