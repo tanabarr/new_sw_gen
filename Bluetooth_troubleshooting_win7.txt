@@ -1,0 +1,9 @@
+Trying to install boardcom Windows drivers for usb Bluetooth dongle and Bluetooth headset.
+
+Software installer Failing, make sure generic Bluetooth adapter is enabled in device manager.
+
+Only have dongle plug-in, turnoff other Bluetooth devices.
+ 
+enable compatibility mode for XP on the setup executable and run as administrator(can't run from network drive).
+ 	
+setup is very slow but should complete s	uccessfully.
