@@ -1,5 +1,16 @@
 good editor for Java and python 
 
+----
+020714
+
+Problems with setting up remote debugging
+(remote interpreter, local files)
+configure path mappings after specifying remote interpreter
+look at deployment parths and map local directory to remote directory specified
+
+download IDE support extension 4 chrome
+
+----
 Pycharm remote deployment
 
 Options for working on a remote system/source base
