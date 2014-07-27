@@ -1,3 +1,14 @@
+----
+270714
+
+baseband version 6.02
+ios 7.1
+imei 01 342100 815635 1
+serial c31jwm6udtwd
+model md297fd/a
+carrier orange 16.0
+
+----
 270114
 
 Iphone 5 io7 update with jailbreak
