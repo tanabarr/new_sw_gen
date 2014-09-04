@@ -153,3 +153,11 @@ these can call serialisers to convert between the python objects and JSON object
 
 Perform things like validation in serialisers
 perform things like tasks not provided by model in view
+
+
+----
+testing
+docstrings automatically picked up in tests & models files
+we want to test out serialiser, better off doing it in unittests?
+
+Doctests can be collated into a test suite using a test loader. Test loader function would sit in tests.py and be called by manage.py test <appname>
