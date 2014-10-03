@@ -1,4 +1,20 @@
 test framework tips
+inotify, entr - run automatically on save
+Page controller design pattern for use with selenium
+
+-Unit testing
+
+python module unit testing can be used in conjunction with pexpect module to test output of command line tools
+
+testing a customised shell:
+each time test, provide initial shell prompt
+test itself must then open database (select database system, authenticate andselect the specific database)
+
+due to the overheads of setup and teardown , test significant functionality by selecting a large sample from the database. (Will produce a large dictionary)
+
+For non-printable data types,save files to the file system and compare from there
+
+----
 problem with the framework. Getting too complicated
 for debugging and sanity purposes try to isolate initialisation and processing as much as possible
 keep track of system context (information that applies to the platform, service location and availability)
